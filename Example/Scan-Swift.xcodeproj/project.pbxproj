@@ -11,6 +11,8 @@
 		4D4B365D251B5958003D9498 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365B251B5958003D9498 /* PermissionManager.swift */; };
 		4D4B3660251B5974003D9498 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365F251B5974003D9498 /* ScanViewController.swift */; };
 		4D4B3663251B5988003D9498 /* ScanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3662251B5988003D9498 /* ScanManager.swift */; };
+		4D4B3666251B59E5003D9498 /* ScanResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3665251B59E5003D9498 /* ScanResultModel.swift */; };
+		4D4B366A251B5C02003D9498 /* ScanConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3669251B5C02003D9498 /* ScanConfigure.swift */; };
 		4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */; };
 		4DD0ACF5251AF7F500D8B3CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */; };
 		4DD0ACF8251AF7F500D8B3CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 		4D4B365B251B5958003D9498 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		4D4B365F251B5974003D9498 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		4D4B3662251B5988003D9498 /* ScanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanManager.swift; sourceTree = "<group>"; };
+		4D4B3665251B59E5003D9498 /* ScanResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultModel.swift; sourceTree = "<group>"; };
+		4D4B3669251B5C02003D9498 /* ScanConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanConfigure.swift; sourceTree = "<group>"; };
 		4DD0ACED251AF7F500D8B3CC /* Scan-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scan-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 				4D4B365B251B5958003D9498 /* PermissionManager.swift */,
 				4D4B365A251B5958003D9498 /* ScanError.swift */,
 				4D4B3662251B5988003D9498 /* ScanManager.swift */,
+				4D4B3669251B5C02003D9498 /* ScanConfigure.swift */,
+				4D4B3665251B59E5003D9498 /* ScanResultModel.swift */,
 				4D4B365F251B5974003D9498 /* ScanViewController.swift */,
 			);
 			name = Source;
@@ -157,8 +163,10 @@
 			files = (
 				4DD0ACF5251AF7F500D8B3CC /* ViewController.swift in Sources */,
 				4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */,
+				4D4B3666251B59E5003D9498 /* ScanResultModel.swift in Sources */,
 				4D4B3663251B5988003D9498 /* ScanManager.swift in Sources */,
 				4D4B3660251B5974003D9498 /* ScanViewController.swift in Sources */,
+				4D4B366A251B5C02003D9498 /* ScanConfigure.swift in Sources */,
 				4D4B365D251B5958003D9498 /* PermissionManager.swift in Sources */,
 				4D4B365C251B5958003D9498 /* ScanError.swift in Sources */,
 			);
