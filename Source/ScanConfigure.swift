@@ -10,7 +10,7 @@ import AVFoundation
 
 open class ScanConfigure {
     
-    let shared = ScanConfigure()
+    static let shared = ScanConfigure()
     
     var isNeedCaptureImage = false
     var isNeedScanResult = true
