@@ -6,11 +6,48 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ScanViewController: UIViewController {
+open class ScanViewController: UIViewController {
+    
+    open var scanManager: ScanManager?
 
-    override func viewDidLoad() {
+    public var loading = "loading"
+    
+    // 启动区域识别功能
+    open var isOpenInterestRect = false
+    
+    // 是否需要识别后的当前图像
+    public var isNeedCodeImage = false
+
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .black
+        edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.startScan()
+        }
+    }
+}
+
+extension ScanViewController {
+    @objc open func startScan() {
+        if scanManager == nil {
+            scanManager = ScanManager(view, isCaptureImage: isNeedCodeImage, cropRect: view.bounds)
+            scanManager?.delegate = self
+        }
+        
+        scanManager?.start()
+    }
+}
+
+extension ScanViewController: ScanManagerDelegate {
+    public func scanManagerScanImage(_ manager: ScanManager, results: [ScanResultModel]) {
+        print(results)
     }
 }
