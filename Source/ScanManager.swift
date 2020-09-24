@@ -147,6 +147,29 @@ extension ScanManager: AVCaptureMetadataOutputObjectsDelegate {
     public func metadataOutput(_ output: AVCaptureMetadataOutput,
                                didOutput metadataObjects: [AVMetadataObject],
                                from connection: AVCaptureConnection) {
+        guard configure.isNeedScanResult else { return }
+        
+        configure.isNeedScanResult = false
+        results.removeAll()
+        
+        for obj in metadataObjects {
+            guard let code = obj as? AVMetadataMachineReadableCodeObject else { continue }
+            results.append(ScanResultModel(content: code.stringValue,
+                                           image: nil,
+                                           codeType: code.type,
+                                           scanCorner: code.corners))
+        }
+        
+        if results.isEmpty {
+            configure.isNeedScanResult = true
+        } else {
+            if configure.isNeedCaptureImage {
+                scanImage()
+            } else {
+                stop()
+                delegate?.scanManagerScanImage(self, results: results)
+            }
+        }
     }
 }
 
