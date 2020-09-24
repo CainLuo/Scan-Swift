@@ -156,8 +156,7 @@ extension ScanManager: AVCaptureMetadataOutputObjectsDelegate {
             guard let code = obj as? AVMetadataMachineReadableCodeObject else { continue }
             results.append(ScanResultModel(content: code.stringValue,
                                            image: nil,
-                                           codeType: code.type,
-                                           scanCorner: code.corners))
+                                           codeType: code.type))
         }
         
         if results.isEmpty {
@@ -215,8 +214,7 @@ extension ScanManager {
         return codeFeature.map {
             ScanResultModel(content: $0.messageString,
                             image: image,
-                            codeType: .qr,
-                            scanCorner: nil)
+                            codeType: .qr)
         }
     }
 }

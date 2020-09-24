@@ -13,12 +13,10 @@ public struct ScanResultModel {
     public var content: String?
     public var image: UIImage?
     public var codeType: AVMetadataObject.ObjectType?
-    public var scanCorner: [CGPoint]?
     
-    public init(content: String?, image: UIImage?, codeType: AVMetadataObject.ObjectType?, scanCorner: [CGPoint]?) {
+    public init(content: String?, image: UIImage?, codeType: AVMetadataObject.ObjectType?) {
         self.content = content
         self.image = image
         self.codeType = codeType
-        self.scanCorner = scanCorner
     }
 }
