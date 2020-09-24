@@ -107,7 +107,7 @@ extension ScanManager {
         }
     }
     
-    open func scanImage() {
+    private func scanImage() {
         guard let connections = stillImageOutput?.connections,
               let still = createConnection(.video, connections: connections) else { return }
         
@@ -260,25 +260,5 @@ extension ScanManager {
         UIGraphicsEndImageContext()
         
         return codeImage
-    }
-}
-
-// MARK: Logo Code Image
-extension ScanManager {
-    public static func addLogoToCode(_ code: UIImage, logo: UIImage, size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContext(code.size)
-        code.draw(in: CGRect(x: 0, y: 0, width: code.size.width, height: code.size.height))
-        
-        let rect = CGRect(x: code.size.width / 2 - size.width / 2,
-                          y: code.size.height / 2 - size.height / 2,
-                          width: size.width,
-                          height: size.height)
-        
-        logo.draw(in: rect)
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return image
     }
 }
