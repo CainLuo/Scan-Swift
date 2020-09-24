@@ -8,37 +8,137 @@
 import UIKit
 import AVFoundation
 
+public protocol ScanManagerDelegate: class {
+    func scanManagerScanImage(_ manager: ScanManager, results: [ScanResultModel])
+}
+
 open class ScanManager: NSObject {
+    
+    open weak var delegate: ScanManagerDelegate?
     
     let device = AVCaptureDevice.default(for: .video)
     
-    var input: AVCaptureDeviceInput?
-    var output: AVCaptureMetadataOutput?
+    var input: AVCaptureDeviceInput!
+    var output: AVCaptureMetadataOutput!
 
     let session = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer?
     
-    var stillImageOutput: AVCaptureStillImageOutput?
+    var stillImageOutput: AVCaptureStillImageOutput!
     
-    var results: [ScanResultModel] = []
-
+    public var results: [ScanResultModel] = []
+    public var configure = ScanConfigure.shared
     
+    init(_ view: UIView, isCaptureImage: Bool, cropRect: CGRect = .zero) {
+        
+        configure.isNeedCaptureImage = isCaptureImage
+        
+        stillImageOutput = AVCaptureStillImageOutput()
+        output = AVCaptureMetadataOutput()
+        super.init()
+        guard let device = device else { return }
+        
+        do {
+            input = try AVCaptureDeviceInput(device: device)
+        } catch {
+            #if DEBUG
+            print("Capture device input initialize fail: \(error.localizedDescription)")
+            #endif
+        }
+        
+        guard let input = input else { return }
+        
+        if session.canAddInput(input) {
+            session.addInput(input)
+        }
+        
+        if session.canAddOutput(output) {
+            session.addOutput(output)
+        }
+        
+        if session.canAddOutput(stillImageOutput) {
+            session.addOutput(stillImageOutput)
+        }
+        
+        output.setMetadataObjectsDelegate(self, queue: .main)
+        output.metadataObjectTypes = configure.codeTypes
+        
+        if !cropRect.equalTo(.zero) {
+            // 在相机启动后再修改则无任何效果
+            output.rectOfInterest = cropRect
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        previewLayer?.videoGravity = .resizeAspectFill
+        previewLayer?.frame = view.bounds
+        
+        if let layer = previewLayer {
+            view.layer.insertSublayer(layer, at: 0)
+        }
+        
+        if device.isFocusPointOfInterestSupported &&
+            device.isFocusModeSupported(.continuousAutoFocus) {
+            do {
+                try input.device.lockForConfiguration()
+                input.device.focusMode = .continuousAutoFocus
+                input.device.unlockForConfiguration()
+            } catch {
+                #if DEBUG
+                print("Device lock for configuration fail: \(error)")
+                #endif
+            }
+        }
+    }
 }
 
 // MARK: Scan Control
 extension ScanManager {
     func start() {
         if !session.isRunning {
-            
+            configure.isNeedScanResult = true
             session.startRunning()
         }
     }
     
     func stop() {
         if session.isRunning {
-            
+            configure.isNeedScanResult = false
             session.stopRunning()
         }
+    }
+    
+    open func scanImage() {
+        guard let connections = stillImageOutput?.connections,
+              let still = createConnection(.video, connections: connections) else { return }
+        
+        stillImageOutput?.captureStillImageAsynchronously(from: still, completionHandler: { [weak self] (buffer, error) in
+            guard let weakSelf = self else { return }
+            weakSelf.stop()
+            
+            if let buffer = buffer,
+               let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer) {
+                
+                let image = UIImage(data: data)
+                
+                for index in 0...weakSelf.results.count - 1 {
+                    self?.results[index].image = image
+                }
+            }
+            
+            if let delegate = weakSelf.delegate {
+                delegate.scanManagerScanImage(weakSelf, results: weakSelf.results)
+            }
+        })
+    }
+    
+    private func createConnection(_ type: AVMediaType, connections: [AVCaptureConnection]) -> AVCaptureConnection? {
+        for connection in connections {
+            for port in connection.inputPorts where port.mediaType == type {
+                return connection
+            }
+        }
+                
+        return nil
     }
 }
 
@@ -121,9 +221,7 @@ extension ScanManager {
                                    parameters: [
                                        "inputImage": qrFilter!.outputImage!,
                                        "inputColor0": CIColor(cgColor: codeColor.cgColor),
-                                       "inputColor1": CIColor(cgColor: backgroundColor.cgColor),
-                                   ]
-        )
+                                       "inputColor1": CIColor(cgColor: backgroundColor.cgColor)])
 
         guard let qrImage = colorFilter?.outputImage,
         let cgImage = CIContext().createCGImage(qrImage, from: qrImage.extent) else {
@@ -159,100 +257,5 @@ extension ScanManager {
         UIGraphicsEndImageContext()
         
         return image
-    }
-}
-
-// MARK: Image Processing
-extension ScanManager {
-    
-    /// Scale Code Image
-    /// - Parameters:
-    ///   - image: UIImage
-    ///   - quality: CGInterpolationQuality
-    ///   - rate: CGFloat
-    /// - Returns: UIImage
-    public static func scale(_ image: UIImage, quality: CGInterpolationQuality, rate: CGFloat) -> UIImage? {
-        var scaleImage: UIImage?
-        let size = CGSize(width: image.size.width * rate,
-                          height: image.size.height * rate)
-
-        UIGraphicsBeginImageContext(size)
-        let context = UIGraphicsGetCurrentContext()
-        context?.interpolationQuality = quality
-        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-
-        scaleImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return scaleImage
-    }
-    
-    /// Cut Image
-    /// - Parameters:
-    ///   - image: UIImage
-    ///   - rect: CGRect
-    /// - Returns: UIImage
-    public static func cut(_ image: UIImage, rect: CGRect) -> UIImage? {
-        guard let cgImage = image.cgImage?.cropping(to: rect) else {
-            return nil
-        }
-        return UIImage(cgImage: cgImage)
-    }
-    
-    /// Rotation
-    /// - Parameters:
-    ///   - image: UIImage
-    ///   - orientation: UIImage.Orientation
-    /// - Returns: UIImage
-    public static func rotation(_ image: UIImage, orientation: UIImage.Orientation) -> UIImage? {
-        var rotate: Double = 0.0
-        var rect: CGRect
-        var translateX: CGFloat = 0.0
-        var translateY: CGFloat = 0.0
-        var scaleX: CGFloat = 1.0
-        var scaleY: CGFloat = 1.0
-
-        switch orientation {
-        case .left:
-            rotate = .pi / 2
-            rect = CGRect(x: 0, y: 0, width: image.size.height, height: image.size.width)
-            translateX = 0
-            translateY = -rect.size.width
-            scaleY = rect.size.width / rect.size.height
-            scaleX = rect.size.height / rect.size.width
-        case .right:
-            rotate = 3 * .pi / 2
-            rect = CGRect(x: 0, y: 0, width: image.size.height, height: image.size.width)
-            translateX = -rect.size.height
-            translateY = 0
-            scaleY = rect.size.width / rect.size.height
-            scaleX = rect.size.height / rect.size.width
-        case .down:
-            rotate = .pi
-            rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-            translateX = -rect.size.width
-            translateY = -rect.size.height
-        default:
-            rotate = 0.0
-            rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-            translateX = 0
-            translateY = 0
-        }
-
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()!
-        // CTM translate
-        context.translateBy(x: 0.0, y: rect.size.height)
-        context.scaleBy(x: 1.0, y: -1.0)
-        context.rotate(by: CGFloat(rotate))
-        context.translateBy(x: translateX, y: translateY)
-
-        context.scaleBy(x: scaleX, y: scaleY)
-        context.draw(image.cgImage!, in: CGRect(x: 0, y: 0, width: rect.size.width, height: rect.size.height))
-        
-        let contentImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return contentImage
     }
 }
