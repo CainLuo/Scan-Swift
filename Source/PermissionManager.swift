@@ -10,7 +10,7 @@ import AVFoundation
 import Photos
 import AssetsLibrary
 
-class PermissionManager {
+public class PermissionManager {
     
     //MARK: 获取相册权限
     static func authorizePhotoWith(comletion: @escaping (Bool, PHAuthorizationStatus) -> Void) {
