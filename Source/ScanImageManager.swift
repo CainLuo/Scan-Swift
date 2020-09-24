@@ -8,8 +8,31 @@
 import UIKit
 
 // MARK: Image Processing
-class ScanImageManager {
+public class ScanImageManager {
     
+    /// Add Logo To Code Image
+    /// - Parameters:
+    ///   - code: UIImage
+    ///   - logo: UIImage
+    ///   - size: CGSize
+    /// - Returns: UIImage
+    public static func addLogoToCode(_ code: UIImage, logo: UIImage, size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContext(code.size)
+        code.draw(in: CGRect(x: 0, y: 0, width: code.size.width, height: code.size.height))
+        
+        let rect = CGRect(x: code.size.width / 2 - size.width / 2,
+                          y: code.size.height / 2 - size.height / 2,
+                          width: size.width,
+                          height: size.height)
+        
+        logo.draw(in: rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+
     /// Scale Code Image
     /// - Parameters:
     ///   - image: UIImage
