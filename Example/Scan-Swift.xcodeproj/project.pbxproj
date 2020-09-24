@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D1D743A251C406A001C30DF /* ScanImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D7439251C406A001C30DF /* ScanImageManager.swift */; };
+		4D341380251C8E0C0076F106 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34137F251C8E0C0076F106 /* ScanView.swift */; };
 		4D4B365C251B5958003D9498 /* ScanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365A251B5958003D9498 /* ScanError.swift */; };
 		4D4B365D251B5958003D9498 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365B251B5958003D9498 /* PermissionManager.swift */; };
 		4D4B3660251B5974003D9498 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365F251B5974003D9498 /* ScanViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		4D1D7439251C406A001C30DF /* ScanImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageManager.swift; sourceTree = "<group>"; };
+		4D34137F251C8E0C0076F106 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		4D4B365A251B5958003D9498 /* ScanError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanError.swift; sourceTree = "<group>"; };
 		4D4B365B251B5958003D9498 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		4D4B365F251B5974003D9498 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				4D4B3669251B5C02003D9498 /* ScanConfigure.swift */,
 				4D4B3665251B59E5003D9498 /* ScanResultModel.swift */,
 				4D4B365F251B5974003D9498 /* ScanViewController.swift */,
+				4D34137F251C8E0C0076F106 /* ScanView.swift */,
 				4D1D7439251C406A001C30DF /* ScanImageManager.swift */,
 			);
 			name = Source;
@@ -171,6 +174,7 @@
 				4D4B3663251B5988003D9498 /* ScanManager.swift in Sources */,
 				4D4B3660251B5974003D9498 /* ScanViewController.swift in Sources */,
 				4D4B366A251B5C02003D9498 /* ScanConfigure.swift in Sources */,
+				4D341380251C8E0C0076F106 /* ScanView.swift in Sources */,
 				4D4B365D251B5958003D9498 /* PermissionManager.swift in Sources */,
 				4D4B365C251B5958003D9498 /* ScanError.swift in Sources */,
 			);

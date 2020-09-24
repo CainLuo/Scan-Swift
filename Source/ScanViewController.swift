@@ -18,13 +18,15 @@ open class ScanViewController: UIViewController {
     
     open var delegate: ScanViewControllerDelegate?
     
-    public var loading = "loading"
+    private var scanView: ScanView?
+    
+    @IBInspectable public var loading = "loading"
     
     // 启动区域识别功能
-    open var isOpenInterestRect = false
+    @IBInspectable open var isOpenInterestRect = false
     
     // 是否需要识别后的当前图像
-    public var isNeedCodeImage = false
+    @IBInspectable public var isNeedCodeImage = false
 
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +37,21 @@ open class ScanViewController: UIViewController {
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        if scanView == nil {
+            scanView = ScanView(frame: UIScreen.main.bounds)
+            view.addSubview(scanView!)
+        }
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.startScan()
         }
+    }
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        scanManager?.stop()
     }
 }
 
