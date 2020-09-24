@@ -8,10 +8,16 @@
 import UIKit
 import AVFoundation
 
+public protocol ScanViewControllerDelegate: class {
+    func scanViewControllerDidScan(_ vc: ScanViewController, result: ScanResultModel?, error: Error?)
+}
+
 open class ScanViewController: UIViewController {
     
     open var scanManager: ScanManager?
-
+    
+    open var delegate: ScanViewControllerDelegate?
+    
     public var loading = "loading"
     
     // 启动区域识别功能
@@ -48,6 +54,10 @@ extension ScanViewController {
 
 extension ScanViewController: ScanManagerDelegate {
     public func scanManagerScanImage(_ manager: ScanManager, results: [ScanResultModel]) {
-        print(results)
+        guard let result = results.first else {
+            delegate?.scanViewControllerDidScan(self, result: nil, error: scanError(.empty, message: "Empty Content"))
+            return
+        }
+        delegate?.scanViewControllerDidScan(self, result: result, error: nil)
     }
 }
