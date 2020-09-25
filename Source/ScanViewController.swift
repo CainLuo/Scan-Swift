@@ -10,6 +10,7 @@ import AVFoundation
 
 public protocol ScanViewControllerDelegate: class {
     func scanViewControllerDidScan(_ vc: ScanViewController, result: ScanResultModel?, error: Error?)
+    func scanViewControllerDrawed(_ vc: ScanViewController)
 }
 
 open class ScanViewController: UIViewController {
@@ -41,6 +42,7 @@ open class ScanViewController: UIViewController {
         if scanView == nil {
             scanView = ScanView(frame: UIScreen.main.bounds)
             view.addSubview(scanView!)
+            delegate?.scanViewControllerDrawed(self)
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
