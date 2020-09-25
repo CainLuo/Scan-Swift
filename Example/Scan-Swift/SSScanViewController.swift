@@ -15,6 +15,7 @@ class SSScanViewController: ScanViewController {
         super.viewDidLoad()
         
         toolBarView.delegate = self
+        scanView = SSScanView(frame: view.frame)
     }
     
     override func viewDidAppear(_ animated: Bool) {
