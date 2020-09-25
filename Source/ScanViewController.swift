@@ -16,24 +16,22 @@ public protocol ScanViewControllerDelegate: class {
 open class ScanViewController: UIViewController {
     
     open var scanManager: ScanManager?
-    
     open var delegate: ScanViewControllerDelegate?
-    
-    private var scanView: ScanView!
-    
-    @IBInspectable public var loading = "loading"
-    
+    open var indicatorView: UIActivityIndicatorView?
+    open var scanView: ScanView!
+        
     // 启动区域识别功能
-    @IBInspectable open var isResetScanRect = false
+    public var isResetScanRect = false
     
     // 是否需要识别后的当前图像
-    @IBInspectable public var isNeedCodeImage = false
+    public var isNeedCodeImage = false
 
     open override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .black
         edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+        configIndicatorView()
     }
     
     open override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +43,7 @@ open class ScanViewController: UIViewController {
             delegate?.scanViewControllerDrawed(self)
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.startScan()
         }
     }
@@ -57,6 +55,7 @@ open class ScanViewController: UIViewController {
     }
 }
 
+// MARK: Start Scan
 extension ScanViewController {
     @objc open func startScan() {
         if scanManager == nil {
@@ -69,9 +68,11 @@ extension ScanViewController {
         }
         
         scanManager?.start()
+        indicatorView?.removeFromSuperview()
     }
 }
 
+// MARK: ScanManagerDelegate
 extension ScanViewController: ScanManagerDelegate {
     public func scanManagerScanImage(_ manager: ScanManager, results: [ScanResultModel]) {
         guard let result = results.first else {
@@ -79,5 +80,22 @@ extension ScanViewController: ScanManagerDelegate {
             return
         }
         delegate?.scanViewControllerDidScan(self, result: result, error: nil)
+    }
+}
+
+// MARK: Config Indicator View
+extension ScanViewController {
+    func configIndicatorView() {
+        if indicatorView == nil {
+            let rect = view.frame
+            indicatorView = UIActivityIndicatorView(frame: CGRect(x: 0,
+                                                                  y: 0,
+                                                                  width: 30,
+                                                                  height: 30))
+            indicatorView?.center = CGPoint(x: rect.size.width / 2, y: rect.size.width / 2)
+            indicatorView?.style = .whiteLarge
+            view.addSubview(indicatorView!)
+        }
+        indicatorView?.startAnimating()
     }
 }
