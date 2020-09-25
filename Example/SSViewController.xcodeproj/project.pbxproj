@@ -22,7 +22,7 @@
 		4D685337251DA511001FCA21 /* SSScanToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D685336251DA511001FCA21 /* SSScanToolBarView.swift */; };
 		4D685339251DA51B001FCA21 /* SSScanToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */; };
 		4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */; };
-		4DD0ACF5251AF7F500D8B3CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */; };
+		4DD0ACF5251AF7F500D8B3CC /* SSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF4251AF7F500D8B3CC /* SSViewController.swift */; };
 		4DD0ACF8251AF7F500D8B3CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */; };
 		4DD0ACFA251AF7F600D8B3CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */; };
 		4DD0ACFD251AF7F600D8B3CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACFB251AF7F600D8B3CC /* LaunchScreen.storyboard */; };
@@ -44,7 +44,7 @@
 		4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSScanToolBarView.xib; sourceTree = "<group>"; };
 		4DD0ACED251AF7F500D8B3CC /* Scan-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scan-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DD0ACF4251AF7F500D8B3CC /* SSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSViewController.swift; sourceTree = "<group>"; };
 		4DD0ACF7251AF7F500D8B3CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DD0ACFC251AF7F600D8B3CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,14 +91,25 @@
 			path = ../Source;
 			sourceTree = "<group>";
 		};
+		4D68533B251DAB2E001FCA21 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */,
+				4DD0ACFE251AF7F600D8B3CC /* Info.plist */,
+				4DD0ACFB251AF7F600D8B3CC /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		4DD0ACE4251AF7F500D8B3CC = {
 			isa = PBXGroup;
 			children = (
-				4D4B3659251B5958003D9498 /* Source */,
-				4DD0ACEF251AF7F500D8B3CC /* Scan-Swift */,
-				4DD0ACEE251AF7F500D8B3CC /* Products */,
-				39BC5A7AF594165C30CFF88A /* Pods */,
 				7E3AB28A129A8A4D2FFEA434 /* Frameworks */,
+				39BC5A7AF594165C30CFF88A /* Pods */,
+				4DD0ACEE251AF7F500D8B3CC /* Products */,
+				4D68533B251DAB2E001FCA21 /* Resource */,
+				4DD0ACEF251AF7F500D8B3CC /* Scan-Swift */,
+				4D4B3659251B5958003D9498 /* Source */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,16 +125,13 @@
 			isa = PBXGroup;
 			children = (
 				4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */,
-				4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */,
-				4DD0ACFE251AF7F600D8B3CC /* Info.plist */,
-				4DD0ACFB251AF7F600D8B3CC /* LaunchScreen.storyboard */,
 				4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */,
 				4D685336251DA511001FCA21 /* SSScanToolBarView.swift */,
 				4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */,
 				4D685334251DA4E3001FCA21 /* SSScanView.swift */,
 				4D685330251DA493001FCA21 /* SSScanViewController.storyboard */,
 				4D685332251DA4A0001FCA21 /* SSScanViewController.swift */,
-				4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */,
+				4DD0ACF4251AF7F500D8B3CC /* SSViewController.swift */,
 			);
 			path = "Scan-Swift";
 			sourceTree = "<group>";
@@ -172,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "Scan-Swift" */;
+			buildConfigurationList = 4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "SSViewController" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD0ACF5251AF7F500D8B3CC /* ViewController.swift in Sources */,
+				4DD0ACF5251AF7F500D8B3CC /* SSViewController.swift in Sources */,
 				4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */,
 				4D685337251DA511001FCA21 /* SSScanToolBarView.swift in Sources */,
 				4D4B3666251B59E5003D9498 /* ScanResultModel.swift in Sources */,
@@ -414,7 +422,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F2X776XLT;
-				INFOPLIST_FILE = "Scan-Swift/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,7 +443,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F2X776XLT;
-				INFOPLIST_FILE = "Scan-Swift/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +459,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "Scan-Swift" */ = {
+		4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "SSViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DD0ACFF251AF7F600D8B3CC /* Debug */,
