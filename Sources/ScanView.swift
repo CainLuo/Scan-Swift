@@ -9,22 +9,15 @@ import UIKit
 
 open class ScanView: UIView {
     
-    // 镂空的UIBezierPath
-    public var emptyPath: UIBezierPath!
-    
-    open override func didMoveToSuperview() {
-        super.didMoveToSuperview()
+    // MARK: Config Mark Layer
+    public func addMarkLayer() {
+        let blackPath = UIBezierPath(rect: frame)
+        let emptyPath = UIBezierPath(roundedRect: getPathRect(), cornerRadius: 0).reversing()
         
-        guard superview != nil else { return }
-        backgroundColor = UIColor(white: 0, alpha: 0.6)
-        
-        let path = UIBezierPath(rect: frame)
-        emptyPath = UIBezierPath(roundedRect: getPathRect(), cornerRadius: 0).reversing()
-        
-        path.append(emptyPath)
+        blackPath.append(emptyPath)
         
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
+        shapeLayer.path = blackPath.cgPath
         
         layer.mask = shapeLayer
     }
