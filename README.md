@@ -41,4 +41,4 @@ pod 'Scan-Swift'
 
 ## 效果
 
-<img alt="Images" src="Images/1.png" width="320"> <img alt="Images" src="Images/2.png" width="320"> <img alt="Images" src="Images/3.png" width="320"> <img alt="Images" src="Images/4.png" width="320">
+<img alt="Images" src="Images/1.PNG" width="320"> <img alt="Images" src="Images/2.PNG" width="320"> <img alt="Images" src="Images/3.PNG" width="320"> <img alt="Images" src="Images/4.PNG" width="320">
