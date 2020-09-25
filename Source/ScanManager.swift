@@ -62,10 +62,16 @@ open class ScanManager: NSObject {
         
         output.setMetadataObjectsDelegate(self, queue: .main)
         output.metadataObjectTypes = configure.codeTypes
-        
+                
         if !cropRect.equalTo(.zero) {
             // 在相机启动后再修改则无任何效果
+            #if DEBUG
+            print("after cropRect: \(cropRect), output.rectOfInterest: \(output.rectOfInterest)")
+            #endif
             output.rectOfInterest = cropRect
+            #if DEBUG
+            print("before cropRect: \(cropRect), output.rectOfInterest: \(output.rectOfInterest)")
+            #endif
         }
         
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
