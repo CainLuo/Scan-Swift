@@ -51,7 +51,7 @@ It is recommended to use ScanViewController and ScanView to achieve custom contr
 
 ## Attention.
 
-iOS 14 has enhanced privacy permissions, especially the new `Limited Photo Library Access` in PhotoLibrary, which will keep popping up a box if it doesn't work. PHPhotoLibraryPreventAutomaticLimitedAccessAlert`, and setting it to `YES` will fix it.
+iOS 14 has enhanced privacy permissions, especially the new `Limited Photo Library Access` in PhotoLibrary, which will keep popping up a box if it doesn't work. `PHPhotoLibraryPreventAutomaticLimitedAccessAlert`, and setting it to `YES` will fix it.
 
 
 
