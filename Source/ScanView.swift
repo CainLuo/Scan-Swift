@@ -9,8 +9,6 @@ import UIKit
 
 open class ScanView: UIView {
     
-    open var toolBarView = ScanToolBarView()
-        
     // 镂空的UIBezierPath
     public var emptyPath: UIBezierPath!
     
