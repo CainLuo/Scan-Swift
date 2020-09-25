@@ -11,7 +11,7 @@ class SSScanView: ScanView {
         
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(white: 0, alpha: 0.6)        
+        backgroundColor = UIColor(white: 0, alpha: 0.6)
     }
     
     required init?(coder: NSCoder) {
