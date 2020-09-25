@@ -13,7 +13,9 @@ public struct ScanResultModel {
     public var content: String?
     public var image: UIImage?
     public var codeType: AVMetadataObject.ObjectType?
+    // Just Scan QR
     public var obj: AVMetadataMachineReadableCodeObject?
+    // Just Recognize QR
     public var feature: CIQRCodeFeature?
     
     public init(content: String?, image: UIImage?, codeType: AVMetadataObject.ObjectType?,
