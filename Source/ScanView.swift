@@ -9,6 +9,8 @@ import UIKit
 
 open class ScanView: UIView {
     
+    open var toolBarView = ScanToolBarView()
+        
     // 镂空的UIBezierPath
     public var emptyPath: UIBezierPath!
     
@@ -28,6 +30,10 @@ open class ScanView: UIView {
         
         layer.mask = shapeLayer
     }
+}
+
+// MARK: Config Rects
+extension ScanView {
     
     open func getPathRect() -> CGRect {
         let width = UIScreen.main.bounds.width
