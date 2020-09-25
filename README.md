@@ -1,19 +1,17 @@
 # Scan-Swift
 
+## Introduction
 
+Swift encapsulates AVFoundation code scanning and QR code image recognition functions.
 
-## 介绍
-
-Swift封装AVFoundation扫码以及识别二维码图片功能
-
-* 可以生成与识别二维码、条形码
-* 支持自定义识别区域
-* 支持ScanView与ScanViewController的重载
-* 支持获取相册图片识别(效果一般)
+* Can generate and recognize QR codes and bar codes
+* Support for custom identification areas
+* Support ScanView and ScanViewController overloading.
+* Support for getting photo albums for image recognition (average results)
 
 
 
-## 安装方式
+## Installation method
 
 ### CocoaPods
 
@@ -31,42 +29,42 @@ pod 'Scan-Swift'
 
 
 
-## 结构
+## Structure
 
-* ScanView: 用于扫码界面的蒙层, 提供指定扫码的区域
-* ScanManager: 核心类, 主要用于封装AVFoundation用于识别、生成Code的方法, 目前支持的有`CIAztecCodeGenerator`、 `CICode128BarcodeGenerator`、`CIPDF417BarcodeGenerator`、`CIQRCodeGenerator`的生成
-* ScanResultModel: 扫码后所获得的数据数据, obj只能在扫码时获得, feature只能在识别图片二维码时获得.
-* ScanConfigure: 用于扫码时的一些配置, 支持扫码的一些具体类型
-* ScanError: 用于扫码时有错误时获得的具体错误类型
-* ScanImageManager: 图片的管理类, 有添加Logo到二维码的方法, 例如: 缩放, 裁剪
-* PermissionManager: 权限管理类, 目前只有获取相册权限和相机权限
-
-
-
-## 使用方式
-
-推荐使用继承ScanViewController与ScanView来实现自定义控制.
+* ScanView: A mask layer used to scan the interface, providing the area to be scanned.
+* ScanManager: core class, mainly used to encapsulate the AVFoundation used to identify, generate Code methods, currently supported by `CIAztecCodeGenerator`, `CICode128BarcodeGenerator`, ` Generation of `CIPDF417BarcodeGenerator`, `CIQRCodeGenerator`.
+* ScanResultModel: data obtained after scanning, obj can only be obtained when scanning, feature can only be obtained when recognizing image QR code.
+* ScanConfigure: Used to configure some data when scanning, support some specific types of scanning.
+* ScanError: the specific type of error to get if there is an error when scanning the code.
+* ScanImageManager: image management class, with methods to add logos to the QR code, e.g.: zoom, crop
+* PermissionManager: permissions management class, currently only have access to album permissions and camera permissions.
 
 
 
-## 注意
+## Mode of use
 
-iOS 14加强了隐私权限, 特别是PhotoLibrary新增了`Limited Photo Library Access`, 如果没有适配则会一直弹框显示, 遇到这种情况可以在Info.plist中添加`PHPhotoLibraryPreventAutomaticLimitedAccessAlert`, 并设置为`YES`就可以解决.
-
-
-
-更多详细的隐私权限适配可以查看: https://juejin.im/post/6850418120923250701
+It is recommended to use ScanViewController and ScanView to achieve custom control.
 
 
 
-## 版本
+## Attention.
+
+iOS 14 has enhanced privacy permissions, especially the new `Limited Photo Library Access` in PhotoLibrary, which will keep popping up a box if it doesn't work. PHPhotoLibraryPreventAutomaticLimitedAccessAlert`, and setting it to `YES` will fix it.
+
+
+
+More detailed privacy rights adaptations can be found at: https://juejin.im/post/6850418120923250701
+
+
+
+## Version
 
 #### V1.0.0
 
-* 支持: Swift 5.3, iOS 10, Xcode 11
+* Support: Swift 5.3, iOS 10, Xcode 11
 
 
 
-## 效果
+## Effects
 
 <img alt="Images" src="Images/1.PNG" width="320"> <img alt="Images" src="Images/2.PNG" width="320"> <img alt="Images" src="Images/3.PNG" width="320"> <img alt="Images" src="Images/4.PNG" width="320">
