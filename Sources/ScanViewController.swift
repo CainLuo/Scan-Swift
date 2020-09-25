@@ -18,7 +18,7 @@ open class ScanViewController: UIViewController {
     open var scanManager: ScanManager?
     open var delegate: ScanViewControllerDelegate?
     open var indicatorView: UIActivityIndicatorView?
-    open var scanView: ScanView!
+    open var scanView: UIView!
         
     // 启动区域识别功能
     public var isResetScanRect = false
@@ -36,13 +36,7 @@ open class ScanViewController: UIViewController {
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        if scanView == nil {
-            scanView = ScanView(frame: UIScreen.main.bounds)
-            view.addSubview(scanView!)
-            delegate?.scanViewControllerDrawed(self)
-        }
-
+        configScanView()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.startScan()
         }
@@ -60,7 +54,7 @@ extension ScanViewController {
     @objc open func startScan() {
         if scanManager == nil {
             var rect = CGRect.zero
-            if isResetScanRect {
+            if isResetScanRect, let scanView = scanView as? ScanView {
                 rect = scanView.getScanRect()
             }
             scanManager = ScanManager(view, isCaptureImage: isNeedCodeImage, cropRect: rect)
@@ -97,5 +91,20 @@ extension ScanViewController {
             view.addSubview(indicatorView!)
         }
         indicatorView?.startAnimating()
+    }
+}
+
+// MARK: Config Scan View
+extension ScanViewController {
+    func configScanView() {
+        let hsaScanView = view.subviews.filter { $0.isKind(of: ScanView.self) }.count > 0
+        
+        if !hsaScanView {
+            if scanView == nil {
+                scanView = ScanView(frame: UIScreen.main.bounds)
+            }
+            view.addSubview(scanView)
+            delegate?.scanViewControllerDrawed(self)
+        }
     }
 }
