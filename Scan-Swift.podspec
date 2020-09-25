@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  
+
   s.name              = "Scan-Swift"
   s.version           = "1.0.0"
   s.summary           = "Scan QR With Swift"
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.source            = { :git => "https://github.com/CainLuo/Scan-Swift.git", :tag => s.version }
   s.documentation_url = 'https://github.com/CainLuo/Scan-Swift'
 
-  s.source_files = 'Source/*.swift'
+  s.source_files = 'Sources/*.swift'
 
   s.ios.deployment_target = '10.0'
 
