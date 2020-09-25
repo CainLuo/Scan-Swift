@@ -43,6 +43,12 @@ pod 'Scan-Swift'
 
 
 
+## 使用方式
+
+推荐使用继承ScanViewController与ScanView来实现自定义控制.
+
+
+
 ## 注意
 
 iOS 14加强了隐私权限, 特别是PhotoLibrary新增了`Limited Photo Library Access`, 如果没有适配则会一直弹框显示, 遇到这种情况可以在Info.plist中添加`PHPhotoLibraryPreventAutomaticLimitedAccessAlert`, 并设置为`YES`就可以解决.
