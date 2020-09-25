@@ -1,0 +1,16 @@
+PODS:
+  - CLExtensions (1.1.4)
+
+DEPENDENCIES:
+  - CLExtensions
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CLExtensions
+
+SPEC CHECKSUMS:
+  CLExtensions: 9d7046ef04835f9824d04fef822ba738ba17022b
+
+PODFILE CHECKSUM: c22bc43f8a660837a206f1e33a791b53085d12c2
+
+COCOAPODS: 1.9.3

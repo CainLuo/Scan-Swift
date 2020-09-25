@@ -13,7 +13,7 @@ public protocol ScanManagerDelegate: class {
 }
 
 open class ScanManager: NSObject {
-    
+        
     open weak var delegate: ScanManagerDelegate?
     
     let device = AVCaptureDevice.default(for: .video)

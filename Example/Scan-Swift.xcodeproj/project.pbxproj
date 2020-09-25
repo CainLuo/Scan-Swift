@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40312855283E6C43D8579069 /* Pods_Scan_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6294EADD0C7DB8256E6F8509 /* Pods_Scan_Swift.framework */; };
 		4D1D743A251C406A001C30DF /* ScanImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D7439251C406A001C30DF /* ScanImageManager.swift */; };
 		4D341380251C8E0C0076F106 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34137F251C8E0C0076F106 /* ScanView.swift */; };
 		4D4B365C251B5958003D9498 /* ScanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365A251B5958003D9498 /* ScanError.swift */; };
@@ -15,6 +16,11 @@
 		4D4B3663251B5988003D9498 /* ScanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3662251B5988003D9498 /* ScanManager.swift */; };
 		4D4B3666251B59E5003D9498 /* ScanResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3665251B59E5003D9498 /* ScanResultModel.swift */; };
 		4D4B366A251B5C02003D9498 /* ScanConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3669251B5C02003D9498 /* ScanConfigure.swift */; };
+		4D685331251DA493001FCA21 /* SSScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D685330251DA493001FCA21 /* SSScanViewController.storyboard */; };
+		4D685333251DA4A0001FCA21 /* SSScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D685332251DA4A0001FCA21 /* SSScanViewController.swift */; };
+		4D685335251DA4E3001FCA21 /* SSScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D685334251DA4E3001FCA21 /* SSScanView.swift */; };
+		4D685337251DA511001FCA21 /* SSScanToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D685336251DA511001FCA21 /* SSScanToolBarView.swift */; };
+		4D685339251DA51B001FCA21 /* SSScanToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */; };
 		4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */; };
 		4DD0ACF5251AF7F500D8B3CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */; };
 		4DD0ACF8251AF7F500D8B3CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */; };
@@ -31,6 +37,11 @@
 		4D4B3662251B5988003D9498 /* ScanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanManager.swift; sourceTree = "<group>"; };
 		4D4B3665251B59E5003D9498 /* ScanResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultModel.swift; sourceTree = "<group>"; };
 		4D4B3669251B5C02003D9498 /* ScanConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanConfigure.swift; sourceTree = "<group>"; };
+		4D685330251DA493001FCA21 /* SSScanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SSScanViewController.storyboard; sourceTree = "<group>"; };
+		4D685332251DA4A0001FCA21 /* SSScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSScanViewController.swift; sourceTree = "<group>"; };
+		4D685334251DA4E3001FCA21 /* SSScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSScanView.swift; sourceTree = "<group>"; };
+		4D685336251DA511001FCA21 /* SSScanToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSScanToolBarView.swift; sourceTree = "<group>"; };
+		4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSScanToolBarView.xib; sourceTree = "<group>"; };
 		4DD0ACED251AF7F500D8B3CC /* Scan-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scan-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +49,9 @@
 		4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DD0ACFC251AF7F600D8B3CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DD0ACFE251AF7F600D8B3CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6294EADD0C7DB8256E6F8509 /* Pods_Scan_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scan_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5CD774797AEC38E7978A1B5 /* Pods-Scan-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scan-Swift.release.xcconfig"; path = "Target Support Files/Pods-Scan-Swift/Pods-Scan-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		D378148352F3F27784CA7C78 /* Pods-Scan-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scan-Swift.debug.xcconfig"; path = "Target Support Files/Pods-Scan-Swift/Pods-Scan-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +59,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40312855283E6C43D8579069 /* Pods_Scan_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39BC5A7AF594165C30CFF88A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D378148352F3F27784CA7C78 /* Pods-Scan-Swift.debug.xcconfig */,
+				C5CD774797AEC38E7978A1B5 /* Pods-Scan-Swift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4D4B3659251B5958003D9498 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +97,8 @@
 				4D4B3659251B5958003D9498 /* Source */,
 				4DD0ACEF251AF7F500D8B3CC /* Scan-Swift */,
 				4DD0ACEE251AF7F500D8B3CC /* Products */,
+				39BC5A7AF594165C30CFF88A /* Pods */,
+				7E3AB28A129A8A4D2FFEA434 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,13 +114,26 @@
 			isa = PBXGroup;
 			children = (
 				4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */,
-				4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */,
-				4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */,
 				4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */,
-				4DD0ACFB251AF7F600D8B3CC /* LaunchScreen.storyboard */,
 				4DD0ACFE251AF7F600D8B3CC /* Info.plist */,
+				4DD0ACFB251AF7F600D8B3CC /* LaunchScreen.storyboard */,
+				4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */,
+				4D685336251DA511001FCA21 /* SSScanToolBarView.swift */,
+				4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */,
+				4D685334251DA4E3001FCA21 /* SSScanView.swift */,
+				4D685330251DA493001FCA21 /* SSScanViewController.storyboard */,
+				4D685332251DA4A0001FCA21 /* SSScanViewController.swift */,
+				4DD0ACF4251AF7F500D8B3CC /* ViewController.swift */,
 			);
 			path = "Scan-Swift";
+			sourceTree = "<group>";
+		};
+		7E3AB28A129A8A4D2FFEA434 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6294EADD0C7DB8256E6F8509 /* Pods_Scan_Swift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DD0AD01251AF7F600D8B3CC /* Build configuration list for PBXNativeTarget "Scan-Swift" */;
 			buildPhases = (
+				3CD9D6DBB5AA8802AD1C2225 /* [CP] Check Pods Manifest.lock */,
 				4DD0ACE9251AF7F500D8B3CC /* Sources */,
 				4DD0ACEA251AF7F500D8B3CC /* Frameworks */,
 				4DD0ACEB251AF7F500D8B3CC /* Resources */,
+				085FB66C1DA111F90C692792 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,13 +195,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D685331251DA493001FCA21 /* SSScanViewController.storyboard in Resources */,
 				4DD0ACFD251AF7F600D8B3CC /* LaunchScreen.storyboard in Resources */,
 				4DD0ACFA251AF7F600D8B3CC /* Assets.xcassets in Resources */,
+				4D685339251DA51B001FCA21 /* SSScanToolBarView.xib in Resources */,
 				4DD0ACF8251AF7F500D8B3CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		085FB66C1DA111F90C692792 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Scan-Swift/Pods-Scan-Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Scan-Swift/Pods-Scan-Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Scan-Swift/Pods-Scan-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CD9D6DBB5AA8802AD1C2225 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Scan-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DD0ACE9251AF7F500D8B3CC /* Sources */ = {
@@ -169,12 +254,15 @@
 			files = (
 				4DD0ACF5251AF7F500D8B3CC /* ViewController.swift in Sources */,
 				4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */,
+				4D685337251DA511001FCA21 /* SSScanToolBarView.swift in Sources */,
 				4D4B3666251B59E5003D9498 /* ScanResultModel.swift in Sources */,
 				4D1D743A251C406A001C30DF /* ScanImageManager.swift in Sources */,
 				4D4B3663251B5988003D9498 /* ScanManager.swift in Sources */,
+				4D685335251DA4E3001FCA21 /* SSScanView.swift in Sources */,
 				4D4B3660251B5974003D9498 /* ScanViewController.swift in Sources */,
 				4D4B366A251B5C02003D9498 /* ScanConfigure.swift in Sources */,
 				4D341380251C8E0C0076F106 /* ScanView.swift in Sources */,
+				4D685333251DA4A0001FCA21 /* SSScanViewController.swift in Sources */,
 				4D4B365D251B5958003D9498 /* PermissionManager.swift in Sources */,
 				4D4B365C251B5958003D9498 /* ScanError.swift in Sources */,
 			);
@@ -320,13 +408,14 @@
 		};
 		4DD0AD02251AF7F600D8B3CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D378148352F3F27784CA7C78 /* Pods-Scan-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F2X776XLT;
 				INFOPLIST_FILE = "Scan-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,13 +429,14 @@
 		};
 		4DD0AD03251AF7F600D8B3CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5CD774797AEC38E7978A1B5 /* Pods-Scan-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8F2X776XLT;
 				INFOPLIST_FILE = "Scan-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

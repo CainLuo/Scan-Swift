@@ -12,10 +12,5 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func pushToScan(_ sender: Any) {
-        let vc = ScanViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
