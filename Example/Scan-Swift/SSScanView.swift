@@ -6,15 +6,21 @@
 //
 
 import UIKit
-import CLExtensions
 
 class SSScanView: ScanView {
-    
-    let toolBarView = SSScanToolBarView.instantiate()
         
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = UIColor(white: 0, alpha: 0.6)        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         guard superview != nil else { return }
-        addSubview(toolBarView)
+        addMarkLayer()
     }
 }
