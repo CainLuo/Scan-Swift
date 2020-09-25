@@ -7,14 +7,19 @@
 
 import UIKit
 
-class ScanView: UIView {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor(white: 0, alpha: 0.7)
+open class ScanView: UIView {
+    
+    // 镂空的UIBezierPath
+    public var emptyPath: UIBezierPath!
+    
+    open override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        guard superview != nil else { return }
+        backgroundColor = UIColor(white: 0, alpha: 0.6)
         
         let path = UIBezierPath(rect: frame)
-        let emptyPath = UIBezierPath(roundedRect: CGRect(x: frame.origin.x, y: frame.origin.y, width: 200, height: 200), cornerRadius: 8).reversing()
+        emptyPath = UIBezierPath(roundedRect: getPathRect(), cornerRadius: 0).reversing()
         
         path.append(emptyPath)
         
@@ -24,7 +29,42 @@ class ScanView: UIView {
         layer.mask = shapeLayer
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    open func getPathRect() -> CGRect {
+        let width = UIScreen.main.bounds.width
+        let pathSize = width * 0.75
+        let x = (width - pathSize) / 2
+
+        return CGRect(x: x, y: x, width: pathSize, height: pathSize)
+    }
+    
+    // ref:http://www.cocoachina.com/ios/20141225/10763.html
+    open func getScanRect() -> CGRect {
+
+        var rectOfInterest = CGRect.zero
+
+        let cropRect = getPathRect()
+        let size = self.bounds.size
+        let p1 = size.height / size.width
+
+        // Use 1080p Image Input
+        let p2: CGFloat = 1920.0 / 1080.0
+        if p1 < p2 {
+            let fixHeight = size.width * 1920.0 / 1080.0
+            let fixPadding = (fixHeight - size.height) / 2
+            rectOfInterest = CGRect(x: (cropRect.origin.y + fixPadding) / fixHeight,
+                                    y: cropRect.origin.x / size.width,
+                                    width: cropRect.size.height / fixHeight,
+                                    height: cropRect.size.width / size.width)
+
+        } else {
+            let fixWidth = size.height * 1080.0 / 1920.0
+            let fixPadding = (fixWidth - size.width) / 2
+            rectOfInterest = CGRect(x: cropRect.origin.y / size.height,
+                                    y: (cropRect.origin.x + fixPadding) / fixWidth,
+                                    width: cropRect.size.height / size.height,
+                                    height: cropRect.size.width / fixWidth)
+        }
+
+        return rectOfInterest
     }
 }
