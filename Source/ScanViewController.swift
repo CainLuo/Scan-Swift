@@ -18,12 +18,12 @@ open class ScanViewController: UIViewController {
     
     open var delegate: ScanViewControllerDelegate?
     
-    private var scanView: ScanView?
+    private var scanView: ScanView!
     
     @IBInspectable public var loading = "loading"
     
     // 启动区域识别功能
-    @IBInspectable open var isOpenInterestRect = false
+    @IBInspectable open var isResetScanRect = false
     
     // 是否需要识别后的当前图像
     @IBInspectable public var isNeedCodeImage = false
@@ -58,7 +58,11 @@ open class ScanViewController: UIViewController {
 extension ScanViewController {
     @objc open func startScan() {
         if scanManager == nil {
-            scanManager = ScanManager(view, isCaptureImage: isNeedCodeImage, cropRect: view.bounds)
+            var rect = CGRect.zero
+            if isResetScanRect {
+                rect = scanView.getScanRect()
+            }
+            scanManager = ScanManager(view, isCaptureImage: isNeedCodeImage, cropRect: rect)
             scanManager?.delegate = self
         }
         
