@@ -1,5 +1,7 @@
 # Scan-Swift
 
+### [中文介绍](https://github.com/CainLuo/Scan-Swift/blob/master/README_ZH.md)
+
 ## Introduction
 
 Swift encapsulates AVFoundation code scanning and QR code image recognition functions.
