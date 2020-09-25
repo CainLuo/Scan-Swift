@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7cU-S5-9JJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan Create Code View Controller-->
+        <scene sceneID="v1t-tj-36E">
+            <objects>
+                <viewController storyboardIdentifier="SSScanCreateCodeViewController" id="7cU-S5-9JJ" customClass="SSScanCreateCodeViewController" customModule="Scan_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6XS-bC-dgh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pjg-sn-xnt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lVt-Wr-oxb">
+                                        <rect key="frame" x="74" y="0.0" width="266" height="266"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lVt-Wr-oxb" secondAttribute="height" multiplier="1:1" id="ZA6-hw-zLV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igh-lY-hS6">
+                                        <rect key="frame" x="74" y="276" width="266" height="266"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="igh-lY-hS6" secondAttribute="height" multiplier="1:1" id="ZG6-5b-Sgk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wfu-tq-XF3">
+                                        <rect key="frame" x="0.0" y="552" width="414" height="266"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pjg-sn-xnt" firstAttribute="top" secondItem="6XS-bC-dgh" secondAttribute="topMargin" id="BC6-eE-LoV"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Pjg-sn-xnt" secondAttribute="bottom" id="eKa-4u-k67"/>
+                            <constraint firstItem="Pjg-sn-xnt" firstAttribute="trailing" secondItem="Rx1-fI-fZ9" secondAttribute="trailing" id="eWK-Gi-VkN"/>
+                            <constraint firstItem="Pjg-sn-xnt" firstAttribute="leading" secondItem="Rx1-fI-fZ9" secondAttribute="leading" id="oPB-0h-e17"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Rx1-fI-fZ9"/>
+                    </view>
+                    <connections>
+                        <outlet property="code128ImageView" destination="Wfu-tq-XF3" id="cqt-gS-H1y"/>
+                        <outlet property="logoCodeImageView" destination="igh-lY-hS6" id="dMm-m8-LUu"/>
+                        <outlet property="qrCodeImageView" destination="lVt-Wr-oxb" id="otl-6o-BK0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2he-Kz-AmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="-220"/>
+        </scene>
+    </scenes>
+</document>

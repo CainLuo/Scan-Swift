@@ -30,6 +30,9 @@ open class ScanManager: NSObject {
     public var configure = ScanConfigure.shared
     
     init(_ view: UIView, isCaptureImage: Bool, cropRect: CGRect = .zero) {
+        #if TARGET_IPHONE_SIMULATOR  //模拟器
+        return
+        #endif
         
         configure.isNeedCaptureImage = isCaptureImage
         
@@ -100,6 +103,9 @@ open class ScanManager: NSObject {
 // MARK: Scan Control
 extension ScanManager {
     func start() {
+        #if TARGET_IPHONE_SIMULATOR  //模拟器
+        return
+        #endif
         if !session.isRunning {
             configure.isNeedScanResult = true
             session.startRunning()
@@ -107,6 +113,9 @@ extension ScanManager {
     }
     
     func stop() {
+        #if TARGET_IPHONE_SIMULATOR  //模拟器
+        return
+        #endif
         if session.isRunning {
             configure.isNeedScanResult = false
             session.stopRunning()
@@ -186,6 +195,9 @@ extension ScanManager: AVCaptureMetadataOutputObjectsDelegate {
 extension ScanManager {
     // 修改闪光灯的开或关
     open func changeFlash() {
+        #if TARGET_IPHONE_SIMULATOR  //模拟器
+        return
+        #endif
         let isOpenFlash = input?.device.torchMode == .off
         openFlash(isOpenFlash)
     }
@@ -195,6 +207,9 @@ extension ScanManager {
     }
 
     private func openFlash(_ torch: Bool) {
+        #if TARGET_IPHONE_SIMULATOR  //模拟器
+        return
+        #endif
         guard isCanOpenFlash() else { return }
         do {
             try input?.device.lockForConfiguration()
@@ -242,12 +257,16 @@ extension ScanManager {
     
     /// Create Code Image
     /// - Returns: UIImage
-    public static func createCodeImage(_ codeType: ScanManagerCodeType, content: String, size: CGSize, codeColor: UIColor = .black, backgroundColor: UIColor = .white) -> UIImage? {
+    public static func createCodeImage(_ codeType: ScanManagerCodeType, content: String, size: CGSize,
+                                       codeColor: UIColor = .black, backgroundColor: UIColor = .white, isHight: Bool = false) -> UIImage? {
         let data = content.data(using: .utf8)
         
         let qrFilter = CIFilter(name: codeType.rawValue)
         qrFilter?.setValue(data, forKey: "inputMessage")
-        qrFilter?.setValue("H", forKey: "inputCorrectionLevel")
+        
+        if isHight {
+            qrFilter?.setValue("H", forKey: "inputCorrectionLevel")
+        }
         
         let colorFilter = CIFilter(name: "CIFalseColor",
                                    parameters: [

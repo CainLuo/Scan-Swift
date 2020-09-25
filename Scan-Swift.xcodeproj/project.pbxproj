@@ -7,17 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DB97D85251DC5AA009FE6F6 /* Scan_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DB97D83251DC5AA009FE6F6 /* Scan_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DCEA892251DC8E500A12E69 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA88A251DC8E400A12E69 /* ScanView.swift */; };
+		4DCEA893251DC8E500A12E69 /* ScanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA88B251DC8E400A12E69 /* ScanError.swift */; };
+		4DCEA894251DC8E500A12E69 /* ScanImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA88C251DC8E400A12E69 /* ScanImageManager.swift */; };
+		4DCEA895251DC8E500A12E69 /* ScanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA88D251DC8E400A12E69 /* ScanManager.swift */; };
+		4DCEA896251DC8E500A12E69 /* ScanConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA88E251DC8E400A12E69 /* ScanConfigure.swift */; };
+		4DCEA897251DC8E500A12E69 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA88F251DC8E400A12E69 /* ScanViewController.swift */; };
+		4DCEA898251DC8E500A12E69 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA890251DC8E400A12E69 /* PermissionManager.swift */; };
+		4DCEA899251DC8E500A12E69 /* ScanResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCEA891251DC8E400A12E69 /* ScanResultModel.swift */; };
+		4DF8F567251DC8CA000DB02C /* Scan_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DF8F565251DC8CA000DB02C /* Scan_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4DB97D80251DC5AA009FE6F6 /* Scan_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Scan_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DB97D83251DC5AA009FE6F6 /* Scan_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scan_Swift.h; sourceTree = "<group>"; };
-		4DB97D84251DC5AA009FE6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DCEA88A251DC8E400A12E69 /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		4DCEA88B251DC8E400A12E69 /* ScanError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanError.swift; sourceTree = "<group>"; };
+		4DCEA88C251DC8E400A12E69 /* ScanImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanImageManager.swift; sourceTree = "<group>"; };
+		4DCEA88D251DC8E400A12E69 /* ScanManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanManager.swift; sourceTree = "<group>"; };
+		4DCEA88E251DC8E400A12E69 /* ScanConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanConfigure.swift; sourceTree = "<group>"; };
+		4DCEA88F251DC8E400A12E69 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		4DCEA890251DC8E400A12E69 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		4DCEA891251DC8E400A12E69 /* ScanResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultModel.swift; sourceTree = "<group>"; };
+		4DF8F562251DC8CA000DB02C /* Scan_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Scan_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF8F565251DC8CA000DB02C /* Scan_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scan_Swift.h; sourceTree = "<group>"; };
+		4DF8F566251DC8CA000DB02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4DB97D7D251DC5AA009FE6F6 /* Frameworks */ = {
+		4DF8F55F251DC8CA000DB02C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -27,27 +43,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4DB97D76251DC5AA009FE6F6 = {
+		4DCEA889251DC8E400A12E69 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4DB97D82251DC5AA009FE6F6 /* Scan-Swift */,
-				4DB97D81251DC5AA009FE6F6 /* Products */,
+				4DCEA88A251DC8E400A12E69 /* ScanView.swift */,
+				4DCEA88B251DC8E400A12E69 /* ScanError.swift */,
+				4DCEA88C251DC8E400A12E69 /* ScanImageManager.swift */,
+				4DCEA88D251DC8E400A12E69 /* ScanManager.swift */,
+				4DCEA88E251DC8E400A12E69 /* ScanConfigure.swift */,
+				4DCEA88F251DC8E400A12E69 /* ScanViewController.swift */,
+				4DCEA890251DC8E400A12E69 /* PermissionManager.swift */,
+				4DCEA891251DC8E400A12E69 /* ScanResultModel.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4DF8F558251DC8CA000DB02C = {
+			isa = PBXGroup;
+			children = (
+				4DCEA889251DC8E400A12E69 /* Sources */,
+				4DF8F564251DC8CA000DB02C /* Scan-Swift */,
+				4DF8F563251DC8CA000DB02C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4DB97D81251DC5AA009FE6F6 /* Products */ = {
+		4DF8F563251DC8CA000DB02C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DB97D80251DC5AA009FE6F6 /* Scan_Swift.framework */,
+				4DF8F562251DC8CA000DB02C /* Scan_Swift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4DB97D82251DC5AA009FE6F6 /* Scan-Swift */ = {
+		4DF8F564251DC8CA000DB02C /* Scan-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				4DB97D83251DC5AA009FE6F6 /* Scan_Swift.h */,
-				4DB97D84251DC5AA009FE6F6 /* Info.plist */,
+				4DF8F565251DC8CA000DB02C /* Scan_Swift.h */,
+				4DF8F566251DC8CA000DB02C /* Info.plist */,
 			);
 			path = "Scan-Swift";
 			sourceTree = "<group>";
@@ -55,25 +87,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4DB97D7B251DC5AA009FE6F6 /* Headers */ = {
+		4DF8F55D251DC8CA000DB02C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DB97D85251DC5AA009FE6F6 /* Scan_Swift.h in Headers */,
+				4DF8F567251DC8CA000DB02C /* Scan_Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4DB97D7F251DC5AA009FE6F6 /* Scan-Swift */ = {
+		4DF8F561251DC8CA000DB02C /* Scan-Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DB97D88251DC5AA009FE6F6 /* Build configuration list for PBXNativeTarget "Scan-Swift" */;
+			buildConfigurationList = 4DF8F56A251DC8CA000DB02C /* Build configuration list for PBXNativeTarget "Scan-Swift" */;
 			buildPhases = (
-				4DB97D7B251DC5AA009FE6F6 /* Headers */,
-				4DB97D7C251DC5AA009FE6F6 /* Sources */,
-				4DB97D7D251DC5AA009FE6F6 /* Frameworks */,
-				4DB97D7E251DC5AA009FE6F6 /* Resources */,
+				4DF8F55D251DC8CA000DB02C /* Headers */,
+				4DF8F55E251DC8CA000DB02C /* Sources */,
+				4DF8F55F251DC8CA000DB02C /* Frameworks */,
+				4DF8F560251DC8CA000DB02C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -81,24 +113,24 @@
 			);
 			name = "Scan-Swift";
 			productName = "Scan-Swift";
-			productReference = 4DB97D80251DC5AA009FE6F6 /* Scan_Swift.framework */;
+			productReference = 4DF8F562251DC8CA000DB02C /* Scan_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4DB97D77251DC5AA009FE6F6 /* Project object */ = {
+		4DF8F559251DC8CA000DB02C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = CainLuo;
 				TargetAttributes = {
-					4DB97D7F251DC5AA009FE6F6 = {
+					4DF8F561251DC8CA000DB02C = {
 						CreatedOnToolsVersion = 11.7;
 					};
 				};
 			};
-			buildConfigurationList = 4DB97D7A251DC5AA009FE6F6 /* Build configuration list for PBXProject "Scan-Swift" */;
+			buildConfigurationList = 4DF8F55C251DC8CA000DB02C /* Build configuration list for PBXProject "Scan-Swift" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -106,18 +138,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 4DB97D76251DC5AA009FE6F6;
-			productRefGroup = 4DB97D81251DC5AA009FE6F6 /* Products */;
+			mainGroup = 4DF8F558251DC8CA000DB02C;
+			productRefGroup = 4DF8F563251DC8CA000DB02C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DB97D7F251DC5AA009FE6F6 /* Scan-Swift */,
+				4DF8F561251DC8CA000DB02C /* Scan-Swift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4DB97D7E251DC5AA009FE6F6 /* Resources */ = {
+		4DF8F560251DC8CA000DB02C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,17 +159,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4DB97D7C251DC5AA009FE6F6 /* Sources */ = {
+		4DF8F55E251DC8CA000DB02C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCEA895251DC8E500A12E69 /* ScanManager.swift in Sources */,
+				4DCEA892251DC8E500A12E69 /* ScanView.swift in Sources */,
+				4DCEA896251DC8E500A12E69 /* ScanConfigure.swift in Sources */,
+				4DCEA893251DC8E500A12E69 /* ScanError.swift in Sources */,
+				4DCEA898251DC8E500A12E69 /* PermissionManager.swift in Sources */,
+				4DCEA899251DC8E500A12E69 /* ScanResultModel.swift in Sources */,
+				4DCEA894251DC8E500A12E69 /* ScanImageManager.swift in Sources */,
+				4DCEA897251DC8E500A12E69 /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4DB97D86251DC5AA009FE6F6 /* Debug */ = {
+		4DF8F568251DC8CA000DB02C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -200,7 +240,7 @@
 			};
 			name = Debug;
 		};
-		4DB97D87251DC5AA009FE6F6 /* Release */ = {
+		4DF8F569251DC8CA000DB02C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -257,7 +297,7 @@
 			};
 			name = Release;
 		};
-		4DB97D89251DC5AA009FE6F6 /* Debug */ = {
+		4DF8F56B251DC8CA000DB02C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -268,20 +308,23 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Scan-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scanSwift.cainluo.Scan-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		4DB97D8A251DC5AA009FE6F6 /* Release */ = {
+		4DF8F56C251DC8CA000DB02C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -292,14 +335,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Scan-Swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.scanSwift.cainluo.Scan-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,25 +354,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4DB97D7A251DC5AA009FE6F6 /* Build configuration list for PBXProject "Scan-Swift" */ = {
+		4DF8F55C251DC8CA000DB02C /* Build configuration list for PBXProject "Scan-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4DB97D86251DC5AA009FE6F6 /* Debug */,
-				4DB97D87251DC5AA009FE6F6 /* Release */,
+				4DF8F568251DC8CA000DB02C /* Debug */,
+				4DF8F569251DC8CA000DB02C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DB97D88251DC5AA009FE6F6 /* Build configuration list for PBXNativeTarget "Scan-Swift" */ = {
+		4DF8F56A251DC8CA000DB02C /* Build configuration list for PBXNativeTarget "Scan-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4DB97D89251DC5AA009FE6F6 /* Debug */,
-				4DB97D8A251DC5AA009FE6F6 /* Release */,
+				4DF8F56B251DC8CA000DB02C /* Debug */,
+				4DF8F56C251DC8CA000DB02C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4DB97D77251DC5AA009FE6F6 /* Project object */;
+	rootObject = 4DF8F559251DC8CA000DB02C /* Project object */;
 }

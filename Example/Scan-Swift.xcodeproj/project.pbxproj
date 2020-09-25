@@ -8,43 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		40312855283E6C43D8579069 /* Pods_Scan_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6294EADD0C7DB8256E6F8509 /* Pods_Scan_Swift.framework */; };
-		4D1D743A251C406A001C30DF /* ScanImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D7439251C406A001C30DF /* ScanImageManager.swift */; };
-		4D341380251C8E0C0076F106 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D34137F251C8E0C0076F106 /* ScanView.swift */; };
-		4D4B365C251B5958003D9498 /* ScanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365A251B5958003D9498 /* ScanError.swift */; };
-		4D4B365D251B5958003D9498 /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365B251B5958003D9498 /* PermissionManager.swift */; };
-		4D4B3660251B5974003D9498 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B365F251B5974003D9498 /* ScanViewController.swift */; };
-		4D4B3663251B5988003D9498 /* ScanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3662251B5988003D9498 /* ScanManager.swift */; };
-		4D4B3666251B59E5003D9498 /* ScanResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3665251B59E5003D9498 /* ScanResultModel.swift */; };
-		4D4B366A251B5C02003D9498 /* ScanConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4B3669251B5C02003D9498 /* ScanConfigure.swift */; };
+		4D1D1D74251DC96D00150EFC /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D6C251DC96D00150EFC /* ScanView.swift */; };
+		4D1D1D75251DC96D00150EFC /* ScanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D6D251DC96D00150EFC /* ScanError.swift */; };
+		4D1D1D76251DC96D00150EFC /* ScanImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D6E251DC96D00150EFC /* ScanImageManager.swift */; };
+		4D1D1D77251DC96D00150EFC /* ScanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D6F251DC96D00150EFC /* ScanManager.swift */; };
+		4D1D1D78251DC96D00150EFC /* ScanConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D70251DC96D00150EFC /* ScanConfigure.swift */; };
+		4D1D1D79251DC96D00150EFC /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D71251DC96D00150EFC /* ScanViewController.swift */; };
+		4D1D1D7A251DC96D00150EFC /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D72251DC96D00150EFC /* PermissionManager.swift */; };
+		4D1D1D7B251DC96D00150EFC /* ScanResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1D1D73251DC96D00150EFC /* ScanResultModel.swift */; };
 		4D685331251DA493001FCA21 /* SSScanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D685330251DA493001FCA21 /* SSScanViewController.storyboard */; };
 		4D685333251DA4A0001FCA21 /* SSScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D685332251DA4A0001FCA21 /* SSScanViewController.swift */; };
 		4D685335251DA4E3001FCA21 /* SSScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D685334251DA4E3001FCA21 /* SSScanView.swift */; };
 		4D685337251DA511001FCA21 /* SSScanToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D685336251DA511001FCA21 /* SSScanToolBarView.swift */; };
 		4D685339251DA51B001FCA21 /* SSScanToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */; };
+		4DAD181C251DCA1B00C6F181 /* SSScanCreateCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAD181B251DCA1B00C6F181 /* SSScanCreateCodeViewController.swift */; };
+		4DAD181E251DCA4700C6F181 /* SSScanCreateCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAD181D251DCA4700C6F181 /* SSScanCreateCode.storyboard */; };
 		4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */; };
-		4DD0ACF5251AF7F500D8B3CC /* SSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF4251AF7F500D8B3CC /* SSViewController.swift */; };
 		4DD0ACF8251AF7F500D8B3CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */; };
 		4DD0ACFA251AF7F600D8B3CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */; };
 		4DD0ACFD251AF7F600D8B3CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD0ACFB251AF7F600D8B3CC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D1D7439251C406A001C30DF /* ScanImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanImageManager.swift; sourceTree = "<group>"; };
-		4D34137F251C8E0C0076F106 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
-		4D4B365A251B5958003D9498 /* ScanError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanError.swift; sourceTree = "<group>"; };
-		4D4B365B251B5958003D9498 /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
-		4D4B365F251B5974003D9498 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		4D4B3662251B5988003D9498 /* ScanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanManager.swift; sourceTree = "<group>"; };
-		4D4B3665251B59E5003D9498 /* ScanResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultModel.swift; sourceTree = "<group>"; };
-		4D4B3669251B5C02003D9498 /* ScanConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanConfigure.swift; sourceTree = "<group>"; };
+		4D1D1D6C251DC96D00150EFC /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		4D1D1D6D251DC96D00150EFC /* ScanError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanError.swift; sourceTree = "<group>"; };
+		4D1D1D6E251DC96D00150EFC /* ScanImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanImageManager.swift; sourceTree = "<group>"; };
+		4D1D1D6F251DC96D00150EFC /* ScanManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanManager.swift; sourceTree = "<group>"; };
+		4D1D1D70251DC96D00150EFC /* ScanConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanConfigure.swift; sourceTree = "<group>"; };
+		4D1D1D71251DC96D00150EFC /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		4D1D1D72251DC96D00150EFC /* PermissionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		4D1D1D73251DC96D00150EFC /* ScanResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanResultModel.swift; sourceTree = "<group>"; };
 		4D685330251DA493001FCA21 /* SSScanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SSScanViewController.storyboard; sourceTree = "<group>"; };
 		4D685332251DA4A0001FCA21 /* SSScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSScanViewController.swift; sourceTree = "<group>"; };
 		4D685334251DA4E3001FCA21 /* SSScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSScanView.swift; sourceTree = "<group>"; };
 		4D685336251DA511001FCA21 /* SSScanToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSScanToolBarView.swift; sourceTree = "<group>"; };
 		4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSScanToolBarView.xib; sourceTree = "<group>"; };
+		4DAD181B251DCA1B00C6F181 /* SSScanCreateCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSScanCreateCodeViewController.swift; sourceTree = "<group>"; };
+		4DAD181D251DCA4700C6F181 /* SSScanCreateCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SSScanCreateCode.storyboard; sourceTree = "<group>"; };
 		4DD0ACED251AF7F500D8B3CC /* Scan-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scan-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DD0ACF4251AF7F500D8B3CC /* SSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSViewController.swift; sourceTree = "<group>"; };
 		4DD0ACF7251AF7F500D8B3CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DD0ACF9251AF7F600D8B3CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DD0ACFC251AF7F600D8B3CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,20 +77,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4D4B3659251B5958003D9498 /* Source */ = {
+		4D1D1D6B251DC96D00150EFC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4D4B365B251B5958003D9498 /* PermissionManager.swift */,
-				4D4B3669251B5C02003D9498 /* ScanConfigure.swift */,
-				4D4B365A251B5958003D9498 /* ScanError.swift */,
-				4D1D7439251C406A001C30DF /* ScanImageManager.swift */,
-				4D4B3662251B5988003D9498 /* ScanManager.swift */,
-				4D4B3665251B59E5003D9498 /* ScanResultModel.swift */,
-				4D34137F251C8E0C0076F106 /* ScanView.swift */,
-				4D4B365F251B5974003D9498 /* ScanViewController.swift */,
+				4D1D1D6C251DC96D00150EFC /* ScanView.swift */,
+				4D1D1D6D251DC96D00150EFC /* ScanError.swift */,
+				4D1D1D6E251DC96D00150EFC /* ScanImageManager.swift */,
+				4D1D1D6F251DC96D00150EFC /* ScanManager.swift */,
+				4D1D1D70251DC96D00150EFC /* ScanConfigure.swift */,
+				4D1D1D71251DC96D00150EFC /* ScanViewController.swift */,
+				4D1D1D72251DC96D00150EFC /* PermissionManager.swift */,
+				4D1D1D73251DC96D00150EFC /* ScanResultModel.swift */,
 			);
-			name = Source;
-			path = ../Source;
+			name = Sources;
+			path = ../Sources;
 			sourceTree = "<group>";
 		};
 		4D68533B251DAB2E001FCA21 /* Resource */ = {
@@ -109,7 +111,7 @@
 				4DD0ACEE251AF7F500D8B3CC /* Products */,
 				4D68533B251DAB2E001FCA21 /* Resource */,
 				4DD0ACEF251AF7F500D8B3CC /* Scan-Swift */,
-				4D4B3659251B5958003D9498 /* Source */,
+				4D1D1D6B251DC96D00150EFC /* Sources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,12 +128,13 @@
 			children = (
 				4DD0ACF0251AF7F500D8B3CC /* AppDelegate.swift */,
 				4DD0ACF6251AF7F500D8B3CC /* Main.storyboard */,
+				4DAD181D251DCA4700C6F181 /* SSScanCreateCode.storyboard */,
+				4DAD181B251DCA1B00C6F181 /* SSScanCreateCodeViewController.swift */,
 				4D685336251DA511001FCA21 /* SSScanToolBarView.swift */,
 				4D685338251DA51B001FCA21 /* SSScanToolBarView.xib */,
 				4D685334251DA4E3001FCA21 /* SSScanView.swift */,
 				4D685330251DA493001FCA21 /* SSScanViewController.storyboard */,
 				4D685332251DA4A0001FCA21 /* SSScanViewController.swift */,
-				4DD0ACF4251AF7F500D8B3CC /* SSViewController.swift */,
 			);
 			path = "Scan-Swift";
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "SSViewController" */;
+			buildConfigurationList = 4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "Scan-Swift" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D685331251DA493001FCA21 /* SSScanViewController.storyboard in Resources */,
+				4DAD181E251DCA4700C6F181 /* SSScanCreateCode.storyboard in Resources */,
 				4DD0ACFD251AF7F600D8B3CC /* LaunchScreen.storyboard in Resources */,
 				4DD0ACFA251AF7F600D8B3CC /* Assets.xcassets in Resources */,
 				4D685339251DA51B001FCA21 /* SSScanToolBarView.xib in Resources */,
@@ -260,19 +264,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DD0ACF5251AF7F500D8B3CC /* SSViewController.swift in Sources */,
 				4DD0ACF1251AF7F500D8B3CC /* AppDelegate.swift in Sources */,
+				4D1D1D7B251DC96D00150EFC /* ScanResultModel.swift in Sources */,
+				4D1D1D7A251DC96D00150EFC /* PermissionManager.swift in Sources */,
+				4DAD181C251DCA1B00C6F181 /* SSScanCreateCodeViewController.swift in Sources */,
 				4D685337251DA511001FCA21 /* SSScanToolBarView.swift in Sources */,
-				4D4B3666251B59E5003D9498 /* ScanResultModel.swift in Sources */,
-				4D1D743A251C406A001C30DF /* ScanImageManager.swift in Sources */,
-				4D4B3663251B5988003D9498 /* ScanManager.swift in Sources */,
+				4D1D1D79251DC96D00150EFC /* ScanViewController.swift in Sources */,
 				4D685335251DA4E3001FCA21 /* SSScanView.swift in Sources */,
-				4D4B3660251B5974003D9498 /* ScanViewController.swift in Sources */,
-				4D4B366A251B5C02003D9498 /* ScanConfigure.swift in Sources */,
-				4D341380251C8E0C0076F106 /* ScanView.swift in Sources */,
+				4D1D1D76251DC96D00150EFC /* ScanImageManager.swift in Sources */,
+				4D1D1D75251DC96D00150EFC /* ScanError.swift in Sources */,
 				4D685333251DA4A0001FCA21 /* SSScanViewController.swift in Sources */,
-				4D4B365D251B5958003D9498 /* PermissionManager.swift in Sources */,
-				4D4B365C251B5958003D9498 /* ScanError.swift in Sources */,
+				4D1D1D78251DC96D00150EFC /* ScanConfigure.swift in Sources */,
+				4D1D1D74251DC96D00150EFC /* ScanView.swift in Sources */,
+				4D1D1D77251DC96D00150EFC /* ScanManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +463,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "SSViewController" */ = {
+		4DD0ACE8251AF7F500D8B3CC /* Build configuration list for PBXProject "Scan-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DD0ACFF251AF7F600D8B3CC /* Debug */,
