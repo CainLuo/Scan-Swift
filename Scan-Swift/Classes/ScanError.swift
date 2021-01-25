@@ -12,7 +12,7 @@ public enum ScanErrorType: Int {
     case unknown = -2
 }
 
-func scanError(_ code: ScanErrorType, message: String? = nil) -> NSError {
+public func scanError(_ code: ScanErrorType, message: String? = nil) -> NSError {
     let domain = "com.scan-swift.error"
     let userInfo: [String : Any] = [NSLocalizedDescriptionKey: message ?? ""]
     return NSError(domain: domain, code: code.rawValue, userInfo: userInfo)
