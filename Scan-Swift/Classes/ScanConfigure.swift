@@ -8,24 +8,24 @@
 import Foundation
 import AVFoundation
 
-open class ScanConfigure {
+public class ScanConfigure {
     
-    static let shared = ScanConfigure()
+    static public let shared = ScanConfigure()
     
-    var isNeedCaptureImage = false
-    var isNeedScanResult = true
+    public var isNeedCaptureImage = false
+    public var isNeedScanResult = true
     
-    var codeTypes: [AVMetadataObject.ObjectType] = [.qr,
-                                                    .upce,
-                                                    .code39Mod43,
-                                                    .ean13,
-                                                    .ean8,
-                                                    .code39,
-                                                    .code93,
-                                                    .code128,
-                                                    .pdf417,
-                                                    .aztec,
-                                                    .interleaved2of5,
-                                                    .itf14,
-                                                    .dataMatrix]
+    public var codeTypes: [AVMetadataObject.ObjectType] = [.qr,
+                                                           .upce,
+                                                           .code39Mod43,
+                                                           .ean13,
+                                                           .ean8,
+                                                           .code39,
+                                                           .code93,
+                                                           .code128,
+                                                           .pdf417,
+                                                           .aztec,
+                                                           .interleaved2of5,
+                                                           .itf14,
+                                                           .dataMatrix]
 }
