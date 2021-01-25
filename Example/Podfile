@@ -4,8 +4,13 @@ platform :ios, '10.0'
 use_frameworks!
 inhibit_all_warnings!
 
-target 'Scan-Swift' do
-
+target 'Scan-Swift_Example' do
+  pod 'Scan-Swift', :path => '../'
   pod 'CLExtensions'
 
+  target 'Scan-Swift_Tests' do
+    inherit! :search_paths
+
+#    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
 end

@@ -1,0 +1,6 @@
+framework module Scan_Swift {
+  umbrella header "Scan-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

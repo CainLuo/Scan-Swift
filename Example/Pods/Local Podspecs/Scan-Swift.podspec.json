@@ -1,0 +1,29 @@
+{
+  "name": "Scan-Swift",
+  "version": "1.1.0",
+  "summary": "Scan QR With Swift.",
+  "description": "Swift encapsulates AVFoundation code scanning and QR code image recognition functions.\n\nCan generate and recognize QR codes and bar codes\nSupport for custom identification areas\nSupport ScanView and ScanViewController overloading.\nSupport for getting photo albums for image recognition (average results)",
+  "homepage": "https://github.com/350116542@qq.com/Scan-Swift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "CainLuo": "350116542@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/CainLuo/Scan-Swift.git",
+    "tag": "1.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "Scan-Swift/Classes/**/*",
+  "swift_versions": [
+    "5.0",
+    "5.1",
+    "5.2",
+    "5.3"
+  ],
+  "swift_version": "5.3"
+}

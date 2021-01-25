@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Scan_Swift
 
 class SSScanView: ScanView {
         

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Scan_Swift
 
 class SSScanViewController: ScanViewController {
     
@@ -25,7 +26,7 @@ class SSScanViewController: ScanViewController {
 }
 
 extension SSScanViewController: SSScanToolBarViewDelegate {
-    func scanQRToolsViewDidSelect(_ view: SSScanToolBarView, type: SSScanToolBarViewTypes) {
+    public func scanQRToolsViewDidSelect(_ view: SSScanToolBarView, type: SSScanToolBarViewTypes) {
         PermissionManager.authorizePhotoWith { [weak self] _,_  in
             let picker = UIImagePickerController()
             picker.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -42,14 +43,14 @@ extension SSScanViewController: SSScanToolBarViewDelegate {
 
 extension SSScanViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
+//        picker.dismiss(animated: true, completion: nil)
+//
+//        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+//        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+//        guard let image = editedImage ?? originalImage else { return }
+//
+//        let result = ScanManager.recognizeImage(image)
         
-        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        guard let image = editedImage ?? originalImage else { return }
-        
-        let result = ScanManager.recognizeImage(image)
-        
-        print("识别的结果是: \(result)")
+//        print("识别的结果是: \(result)")
     }
 }

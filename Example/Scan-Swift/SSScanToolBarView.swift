@@ -7,6 +7,7 @@
 
 import UIKit
 import CLExtensions
+import Scan_Swift
 
 enum SSScanToolBarViewTypes: Int {
     case qrCode = 0

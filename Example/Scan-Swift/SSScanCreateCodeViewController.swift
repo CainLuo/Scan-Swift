@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Scan_Swift
 
 class SSScanCreateCodeViewController: UIViewController {
     
@@ -24,19 +25,15 @@ class SSScanCreateCodeViewController: UIViewController {
 extension SSScanCreateCodeViewController {
     func createQRCode() {
         qrCodeImageView.image = ScanManager.createCodeImage(.qrCodeGenerator, content: "Hello word", size: qrCodeImageView.frame.size)
-        qrCodeImageView.layer.magnificationFilter = .nearest
     }
     
     func createLogoCode() {
         if let qrCode = ScanManager.createCodeImage(.qrCodeGenerator, content: "天青色等烟雨 而我在等你", size: logoCodeImageView.frame.size) {
             logoCodeImageView.image = ScanImageManager.addLogoToCode(qrCode, logo: UIImage(named: "logo")!, size: CGSize(width: 60, height: 60))
         }
-        
-        logoCodeImageView.layer.magnificationFilter = .nearest
     }
     
     func create128Code() {
         code128ImageView.image = ScanManager.createCodeImage(.code128, content: "000111222333", size: code128ImageView.frame.size)
-        code128ImageView.layer.magnificationFilter = .nearest
     }
 }

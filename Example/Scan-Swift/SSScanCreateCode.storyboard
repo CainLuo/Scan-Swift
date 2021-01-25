@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7cU-S5-9JJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7cU-S5-9JJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Scan Create Code View Controller-->
         <scene sceneID="v1t-tj-36E">
             <objects>
-                <viewController storyboardIdentifier="SSScanCreateCodeViewController" id="7cU-S5-9JJ" customClass="SSScanCreateCodeViewController" customModule="Scan_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SSScanCreateCodeViewController" id="7cU-S5-9JJ" customClass="SSScanCreateCodeViewController" customModule="Scan_Swift_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6XS-bC-dgh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,14 +38,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Rx1-fI-fZ9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Pjg-sn-xnt" firstAttribute="top" secondItem="6XS-bC-dgh" secondAttribute="topMargin" id="BC6-eE-LoV"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Pjg-sn-xnt" secondAttribute="bottom" id="eKa-4u-k67"/>
                             <constraint firstItem="Pjg-sn-xnt" firstAttribute="trailing" secondItem="Rx1-fI-fZ9" secondAttribute="trailing" id="eWK-Gi-VkN"/>
                             <constraint firstItem="Pjg-sn-xnt" firstAttribute="leading" secondItem="Rx1-fI-fZ9" secondAttribute="leading" id="oPB-0h-e17"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Rx1-fI-fZ9"/>
                     </view>
                     <connections>
                         <outlet property="code128ImageView" destination="Wfu-tq-XF3" id="cqt-gS-H1y"/>
@@ -57,4 +58,9 @@
             <point key="canvasLocation" x="384" y="-220"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

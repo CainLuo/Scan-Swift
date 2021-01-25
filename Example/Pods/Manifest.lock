@@ -1,16 +1,23 @@
 PODS:
   - CLExtensions (1.1.4)
+  - Scan-Swift (1.1.0)
 
 DEPENDENCIES:
   - CLExtensions
+  - Scan-Swift (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - CLExtensions
 
+EXTERNAL SOURCES:
+  Scan-Swift:
+    :path: "../"
+
 SPEC CHECKSUMS:
   CLExtensions: 9d7046ef04835f9824d04fef822ba738ba17022b
+  Scan-Swift: a0fe0bb5f027e8322669b0eb6ee9760c4b95db5f
 
-PODFILE CHECKSUM: c22bc43f8a660837a206f1e33a791b53085d12c2
+PODFILE CHECKSUM: c8e6ddda4dfaebc133062926bd7fa73c635928df
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
