@@ -29,32 +29,35 @@ open class ScanViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .black
+        view.backgroundColor = .red
         edgesForExtendedLayout = UIRectEdge(rawValue: 0)
-        configIndicatorView()
     }
     
     open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        configScanView()
+        #if !TARGET_IPHONE_SIMULATOR  // 判断不是模拟器
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.startScan()
         }
+        #endif
+        super.viewDidAppear(animated)
+    }
+    
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        configIndicatorView()
+        configScanView()
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         scanManager?.stop()
+        super.viewWillDisappear(animated)
     }
 }
 
 // MARK: Start Scan
 extension ScanViewController {
     @objc public func startScan() {
-        #if TARGET_IPHONE_SIMULATOR  //模拟器
-        return
-        #endif
         if scanManager == nil {
             var rect = CGRect.zero
             if isResetScanRect, let scanView = scanView as? ScanView {
