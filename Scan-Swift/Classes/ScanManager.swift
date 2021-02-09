@@ -101,23 +101,21 @@ public class ScanManager: NSObject {
 // MARK: Scan Control
 extension ScanManager {
     func start() {
-        #if TARGET_IPHONE_SIMULATOR  //模拟器
-        return
-        #endif
+        #if !TARGET_IPHONE_SIMULATOR  // 判断不是模拟器
         if !session.isRunning {
             configure.isNeedScanResult = true
             session.startRunning()
         }
+        #endif
     }
     
     func stop() {
-        #if TARGET_IPHONE_SIMULATOR  //模拟器
-        return
-        #endif
+        #if !TARGET_IPHONE_SIMULATOR  // 判断不是模拟器
         if session.isRunning {
             configure.isNeedScanResult = false
             session.stopRunning()
         }
+        #endif
     }
     
     private func scanImage() {
@@ -145,13 +143,15 @@ extension ScanManager {
     }
     
     private func createConnection(_ type: AVMediaType, connections: [AVCaptureConnection]) -> AVCaptureConnection? {
-        for connection in connections {
-            for port in connection.inputPorts where port.mediaType == type {
-                return connection
-            }
+        let mapConnection = connections.map { connection -> AVCaptureConnection? in
+            guard let port = connection as? AVCaptureInput.Port,
+                  port.mediaType == type else { return nil }
+            return connection
         }
-                
-        return nil
+        
+        let connection = mapConnection.filter { $0 != nil }.map { $0! }.first
+                        
+        return mapConnection.filter { $0 != nil }.map { $0! }.first
     }
 }
 
@@ -193,11 +193,10 @@ extension ScanManager: AVCaptureMetadataOutputObjectsDelegate {
 extension ScanManager {
     // 修改闪光灯的开或关
     open func changeFlash() {
-        #if TARGET_IPHONE_SIMULATOR  //模拟器
-        return
-        #endif
+        #if !TARGET_IPHONE_SIMULATOR  // 判断不是模拟器
         let isOpenFlash = input?.device.torchMode == .off
         openFlash(isOpenFlash)
+        #endif
     }
 
     private func isCanOpenFlash() -> Bool {
@@ -205,19 +204,12 @@ extension ScanManager {
     }
 
     private func openFlash(_ torch: Bool) {
-        #if TARGET_IPHONE_SIMULATOR  //模拟器
-        return
-        #endif
+        #if !TARGET_IPHONE_SIMULATOR  // 判断不是模拟器
         guard isCanOpenFlash() else { return }
-        do {
-            try input?.device.lockForConfiguration()
-            input?.device.torchMode = torch ? AVCaptureDevice.TorchMode.on : AVCaptureDevice.TorchMode.off
-            input?.device.unlockForConfiguration()
-        } catch {
-            #if DEBUG
-            print("Open Flash Fail: \(error.localizedDescription)")
-            #endif
-        }
+        try? input?.device.lockForConfiguration()
+        input?.device.torchMode = torch ? AVCaptureDevice.TorchMode.on : AVCaptureDevice.TorchMode.off
+        input?.device.unlockForConfiguration()
+        #endif
     }
 }
 
@@ -245,10 +237,10 @@ extension ScanManager {
 
 // MARK: Code Types
 public enum ScanManagerCodeType: String {
+    case pdf417             = "CIPDF417BarcodeGenerator"
+    case code128            = "CICode128BarcodeGenerator"
+    case qrCodeGenerator    = "CIQRCodeGenerator"
     case aztecCodeGenerator = "CIAztecCodeGenerator"
-    case code128 = "CICode128BarcodeGenerator"
-    case pdf417 = "CIPDF417BarcodeGenerator"
-    case qrCodeGenerator = "CIQRCodeGenerator"
 }
 
 extension ScanManager {
@@ -266,11 +258,13 @@ extension ScanManager {
             qrFilter?.setValue("H", forKey: "inputCorrectionLevel")
         }
         
+        let parameters = [
+            "inputImage": qrFilter!.outputImage!,
+            "inputColor0": CIColor(cgColor: codeColor.cgColor),
+            "inputColor1": CIColor(cgColor: backgroundColor.cgColor)
+        ]
         let colorFilter = CIFilter(name: "CIFalseColor",
-                                   parameters: [
-                                       "inputImage": qrFilter!.outputImage!,
-                                       "inputColor0": CIColor(cgColor: codeColor.cgColor),
-                                       "inputColor1": CIColor(cgColor: backgroundColor.cgColor)])
+                                   parameters: parameters)
 
         guard let qrImage = colorFilter?.outputImage,
         let cgImage = CIContext().createCGImage(qrImage, from: qrImage.extent) else {
