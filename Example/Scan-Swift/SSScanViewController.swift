@@ -43,14 +43,14 @@ extension SSScanViewController: SSScanToolBarViewDelegate {
 
 extension SSScanViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        picker.dismiss(animated: true, completion: nil)
-//
-//        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-//        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-//        guard let image = editedImage ?? originalImage else { return }
-//
-//        let result = ScanManager.recognizeImage(image)
+        picker.dismiss(animated: true, completion: nil)
+
+        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        guard let image = editedImage ?? originalImage else { return }
+
+        let result = ScanManager.recognizeImage(image)
         
-//        print("识别的结果是: \(result)")
+        print("识别的结果是: \(result)")
     }
 }
