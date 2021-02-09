@@ -22,6 +22,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		BF24FE0D25D1935E0067B52C /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24FE0C25D1935E0067B52C /* MainTableViewController.swift */; };
+		BF24FE2125D279530067B52C /* NetAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24FE2025D279530067B52C /* NetAnimated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		BF24FE1A25D277C00067B52C /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		BF24FE1B25D277C00067B52C /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		BF24FE1C25D277C00067B52C /* ScanResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultModel.swift; sourceTree = "<group>"; };
+		BF24FE1F25D279010067B52C /* LineAnimated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineAnimated.swift; sourceTree = "<group>"; };
+		BF24FE2025D279530067B52C /* NetAnimated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetAnimated.swift; sourceTree = "<group>"; };
 		D175ACFCBDBE10A7F1AD4FD6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F7D898A8E4FAB56BEEC6DE3A /* Pods-Scan-Swift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scan-Swift_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Scan-Swift_Tests/Pods-Scan-Swift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2CFB3CE047E12845E92A76 /* Pods-Scan-Swift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scan-Swift_Tests.release.xcconfig"; path = "Target Support Files/Pods-Scan-Swift_Tests/Pods-Scan-Swift_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				BF24FE1A25D277C00067B52C /* ScanViewController.swift */,
 				BF24FE1B25D277C00067B52C /* PermissionManager.swift */,
 				BF24FE1C25D277C00067B52C /* ScanResultModel.swift */,
+				BF24FE1F25D279010067B52C /* LineAnimated.swift */,
+				BF24FE2025D279530067B52C /* NetAnimated.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				4D664A9525BE7E6A00A28EB8 /* SSScanView.swift in Sources */,
 				BF24FE0D25D1935E0067B52C /* MainTableViewController.swift in Sources */,
 				4D664A9725BE7E6A00A28EB8 /* SSScanToolBarView.swift in Sources */,
+				BF24FE2125D279530067B52C /* NetAnimated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
