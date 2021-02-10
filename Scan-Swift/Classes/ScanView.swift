@@ -9,8 +9,8 @@ import UIKit
 
 open class ScanView: UIView {
     
-    var lineAnimated: LineAnimated?
-    var netAnimated: NetAnimated?
+    var lineAnimated: LineImageView?
+    var gridAnimated: GridImageView?
     var indicatorView: UIActivityIndicatorView?
     var isAnimationing = false
     
@@ -30,7 +30,8 @@ open class ScanView: UIView {
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
         guard superview != nil else { return }
-        lineAnimated = LineAnimated.instance()
+//        lineAnimated = LineImageView.instance()
+        gridAnimated = GridImageView.instance()
         addMarkLayer()
         start()
     }
@@ -49,7 +50,8 @@ extension ScanView {
 
         let rect = getPathRect()
         
-        lineAnimated?.config(rect, view: superview!, image: UIImage(named: "qrcode_scan_light_green"))
+//        lineAnimated?.config(rect, view: superview!, image: UIImage(named: "qrcode_scan_light_green"))
+        gridAnimated?.config(rect, view: superview!, image: UIImage(named: "qrcode_scan_full_net"))
     }
     
     func stop() {

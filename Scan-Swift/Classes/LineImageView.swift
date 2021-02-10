@@ -1,5 +1,5 @@
 //
-//  LineAnimated.swift
+//  LineImageView.swift
 //  Scan-Swift
 //
 //  Created by CainLuo on 2021/2/9.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class LineAnimated: UIImageView {
+open class LineImageView: UIImageView {
     
-    public static func instance() -> LineAnimated {
-        return LineAnimated()
+    public static func instance() -> LineImageView {
+        return LineImageView()
     }
     
     private var isAnimation = false
@@ -47,7 +47,7 @@ open class LineAnimated: UIImageView {
             rect?.size.height = image.size.height
             self?.frame = rect ?? .zero
         }, completion: { [weak self] _ in
-            self?.perform(#selector(LineAnimated.start), with: nil, afterDelay: 0.3)
+            self?.perform(#selector(LineImageView.start), with: nil, afterDelay: 0.3)
         })
     }
     
@@ -59,7 +59,7 @@ open class LineAnimated: UIImageView {
     deinit {
         stop()
         #if DEBUG
-        print("-------------------------------------- LineAnimated deinit --------------------------------------")
+        print("-------------------------------------- LineImageView deinit --------------------------------------")
         #endif
     }
 }
