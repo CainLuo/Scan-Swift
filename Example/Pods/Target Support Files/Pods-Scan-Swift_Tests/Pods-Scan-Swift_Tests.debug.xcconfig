@@ -1,8 +1,8 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CLExtensions" "${PODS_CONFIGURATION_BUILD_DIR}/Scan-Swift"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CLExtensions" "${PODS_CONFIGURATION_BUILD_DIR}/Scan-Swift" "${PODS_ROOT}/LookinServer"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CLExtensions/CLExtensions.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Scan-Swift/Scan_Swift.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "CLExtensions" -framework "Scan_Swift"
+OTHER_LDFLAGS = $(inherited) -framework "CLExtensions" -framework "LookinServer" -framework "Scan_Swift" -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

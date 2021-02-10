@@ -7,6 +7,8 @@ inhibit_all_warnings!
 target 'Scan-Swift_Example' do
   pod 'Scan-Swift', :path => '../'
   pod 'CLExtensions'
+  
+  pod 'LookinServer', :configurations => ['Debug']
 
   target 'Scan-Swift_Tests' do
     inherit! :search_paths

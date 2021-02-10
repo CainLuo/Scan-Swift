@@ -176,6 +176,7 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CLExtensions/CLExtensions.framework"
+  install_framework "${PODS_ROOT}/LookinServer/LookinServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Scan-Swift/Scan_Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then

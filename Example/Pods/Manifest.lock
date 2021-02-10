@@ -1,14 +1,17 @@
 PODS:
   - CLExtensions (1.1.4)
+  - LookinServer (1.0.0)
   - Scan-Swift (1.1.0)
 
 DEPENDENCIES:
   - CLExtensions
+  - LookinServer
   - Scan-Swift (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - CLExtensions
+    - LookinServer
 
 EXTERNAL SOURCES:
   Scan-Swift:
@@ -16,8 +19,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CLExtensions: 9d7046ef04835f9824d04fef822ba738ba17022b
+  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   Scan-Swift: a0fe0bb5f027e8322669b0eb6ee9760c4b95db5f
 
-PODFILE CHECKSUM: c8e6ddda4dfaebc133062926bd7fa73c635928df
+PODFILE CHECKSUM: e19a5e6753e60e169020484edbfb3860af23aeaf
 
 COCOAPODS: 1.10.1
