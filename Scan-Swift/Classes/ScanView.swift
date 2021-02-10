@@ -9,6 +9,11 @@ import UIKit
 
 open class ScanView: UIView {
     
+    var lineAnimated: LineAnimated?
+    var netAnimated: NetAnimated?
+    var indicatorView: UIActivityIndicatorView?
+    var isAnimationing = false
+    
     // MARK: Config Mark Layer
     public func addMarkLayer() {
         let blackPath = UIBezierPath(rect: frame)
@@ -20,6 +25,36 @@ open class ScanView: UIView {
         shapeLayer.path = blackPath.cgPath
         
         layer.mask = shapeLayer
+    }
+    
+    open override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        guard superview != nil else { return }
+        lineAnimated = LineAnimated.instance()
+        addMarkLayer()
+        start()
+    }
+    
+    deinit {
+        #if DEBUG
+        print("-------------------------------------- ScanView deinit --------------------------------------")
+        #endif
+    }
+}
+
+extension ScanView {
+    func start() {
+        guard !isAnimationing  else { return }
+        isAnimationing = true
+
+        let rect = getPathRect()
+        
+        lineAnimated?.config(rect, view: superview!, image: UIImage(named: "qrcode_scan_light_green"))
+    }
+    
+    func stop() {
+        isAnimationing = false
+        lineAnimated?.stop()
     }
 }
 

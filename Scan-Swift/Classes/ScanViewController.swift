@@ -49,9 +49,15 @@ open class ScanViewController: UIViewController {
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         scanManager?.stop()
-        super.viewWillDisappear(animated)
+    }
+    
+    deinit {
+        #if DEBUG
+        print("-------------------------------------- ScanViewController deinit --------------------------------------")
+        #endif
     }
 }
 

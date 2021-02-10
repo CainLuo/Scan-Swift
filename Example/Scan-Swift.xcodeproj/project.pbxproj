@@ -355,11 +355,13 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Scan-Swift_Example/Pods-Scan-Swift_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CLExtensions/CLExtensions.framework",
+				"${PODS_ROOT}/LookinServer/LookinServer.framework",
 				"${BUILT_PRODUCTS_DIR}/Scan-Swift/Scan_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LookinServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Scan_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

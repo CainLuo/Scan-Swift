@@ -15,7 +15,7 @@ open class NetAnimated: UIImageView {
     var isAnimation = false
     var animatedRect: CGRect = .zero
 
-    func start(_ rect: CGRect, view: UIView, image: UIImage?) {
+    func config(_ rect: CGRect, view: UIView, image: UIImage?) {
         self.image = image
         animatedRect = rect
         view.addSubview(self)
@@ -24,11 +24,11 @@ open class NetAnimated: UIImageView {
         isAnimation = true
         
         if image != nil {
-            step()
+            start()
         }
     }
     
-    @objc func step() {
+    @objc func start() {
         guard isAnimation, let image = self.image else { return }
         
         let height = image.size.height * animatedRect.size.width / image.size.width
@@ -45,7 +45,7 @@ open class NetAnimated: UIImageView {
             self.animatedRect.size.height = height
             self.frame = self.animatedRect
         }, completion: { _ in
-            self.perform(#selector(NetAnimated.step), with: nil, afterDelay: 0.3)
+            self.perform(#selector(NetAnimated.start), with: nil, afterDelay: 0.3)
         })
     }
     

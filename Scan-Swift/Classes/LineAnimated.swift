@@ -10,41 +10,44 @@ import UIKit
 
 open class LineAnimated: UIImageView {
     
-    public static let share = LineAnimated()
+    public static func instance() -> LineAnimated {
+        return LineAnimated()
+    }
     
-    var isAnimation = false
+    private var isAnimation = false
     var animatedRect: CGRect = .zero
     
-    func start(_ rect: CGRect, view: UIView, image: UIImage?) {
+    func config(_ rect: CGRect, view: UIView, image: UIImage?) {
         self.image = image
         animatedRect = rect
+        if !view.subviews.contains(self) {
+            view.addSubview(self)
+        }
         
         isHidden = false
         isAnimation = true
         
         if image != nil {
-            step()
+            start()
         }
     }
     
-    @objc func step() {
+    @objc func start() {
         guard isAnimation, let image = self.image else { return }
         
-        let height = image.size.height * animatedRect.size.width / image.size.width
-        
-        animatedRect.origin.y -= height
-        animatedRect.size.height = height
-        self.frame = animatedRect
+        var rect = animatedRect
+        rect.size.height = image.size.height
+        frame = rect
         alpha = 0.0
         
-        UIView.animate(withDuration: 1.4, animations: {
-            self.alpha = 1.0
-            let height = image.size.height * self.animatedRect.size.width / image.size.width
-            self.animatedRect.origin.y += (self.animatedRect.size.height - height)
-            self.animatedRect.size.height = height
-            self.frame = self.animatedRect
-        }, completion: { _ in
-            self.perform(#selector(LineAnimated.step), with: nil, afterDelay: 0.3)
+        UIView.animate(withDuration: 1.0, animations: { [weak self] in
+            self?.alpha = 1.0
+            var rect = self?.animatedRect
+            rect?.origin.y += ((self?.animatedRect.height ?? 0) - image.size.height)
+            rect?.size.height = image.size.height
+            self?.frame = rect ?? .zero
+        }, completion: { [weak self] _ in
+            self?.perform(#selector(LineAnimated.start), with: nil, afterDelay: 0.3)
         })
     }
     
@@ -55,5 +58,8 @@ open class LineAnimated: UIImageView {
     
     deinit {
         stop()
+        #if DEBUG
+        print("-------------------------------------- LineAnimated deinit --------------------------------------")
+        #endif
     }
 }
