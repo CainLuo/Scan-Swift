@@ -54,7 +54,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		70D4FC1C722C1BB57ABE4534 /* Pods_Scan_Swift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scan_Swift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		927F3C04CF07A6A994FDAF7A /* Scan-Swift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Scan-Swift.podspec"; path = "../Scan-Swift.podspec"; sourceTree = "<group>"; };
+		927F3C04CF07A6A994FDAF7A /* Scan-Swift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Scan-Swift.podspec"; path = "../Scan-Swift.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99B785533A280632AFDB31D5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A9794D1A97B036F19B0B351B /* Pods-Scan-Swift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scan-Swift_Example.debug.xcconfig"; path = "Target Support Files/Pods-Scan-Swift_Example/Pods-Scan-Swift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B834E1A50A3529A379B151D0 /* Pods_Scan_Swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scan_Swift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
